@@ -1,0 +1,1623 @@
+<!DOCTYPE html>
+<!-- saved from url=(0081)https://carbidesecure.com/resources/security-best-practices-hardening-windows-10/ -->
+<html lang="en-US" class="canvas no-forcetouch svg no-touchevents video cssanimations flexbox cssremunit picture videoloop videopreload no-videoautoplay banner-load scrolled cook-hide"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <script src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/2549062.js.descarga" type="text/javascript" id="cookieBanner-2549062" data-cookieconsent="ignore" data-hs-ignore="true" data-loader="hs-scriptloader" data-hsjs-portal="2549062" data-hsjs-env="prod" data-hsjs-hublet="na1"></script><script src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/fb.js.descarga" type="text/javascript" id="hs-ads-pixel-2549062" data-ads-portal-id="2549062" data-ads-env="prod" data-loader="hs-scriptloader" data-hsjs-portal="2549062" data-hsjs-env="prod" data-hsjs-hublet="na1"></script><script src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/2549062.js(1).descarga" type="text/javascript" id="hs-script-loader"></script><script type="text/javascript" async="" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/q7t92v9r"></script><script type="text/javascript" async="" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/insight.min.js.descarga"></script><script type="text/javascript" async="" referrerpolicy="unsafe-url" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/618bd3102281f50015977861"></script><script async="" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/uwt.js.descarga"></script><script async="" crossorigin="anonymous" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/fs.js.descarga"></script><script type="text/javascript" async="" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/analytics.js.descarga"></script><script id="hs-analytics" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/2549062.js(2).descarga"></script><script async="" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/gtm.js.descarga"></script><script type="text/javascript">
+var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,initializeOnLoaded:function(o){gform.domLoaded&&gform.scriptsLoaded?o():!gform.domLoaded&&gform.scriptsLoaded?window.addEventListener("DOMContentLoaded",o):document.addEventListener("gform_main_scripts_loaded",o)},hooks:{action:{},filter:{}},addAction:function(o,n,r,t){gform.addHook("action",o,n,r,t)},addFilter:function(o,n,r,t){gform.addHook("filter",o,n,r,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,n){gform.removeHook("action",o,n)},removeFilter:function(o,n,r){gform.removeHook("filter",o,n,r)},addHook:function(o,n,r,t,i){null==gform.hooks[o][n]&&(gform.hooks[o][n]=[]);var e=gform.hooks[o][n];null==i&&(i=n+"_"+e.length),gform.hooks[o][n].push({tag:i,callable:r,priority:t=null==t?10:t})},doHook:function(n,o,r){var t;if(r=Array.prototype.slice.call(r,1),null!=gform.hooks[n][o]&&((o=gform.hooks[n][o]).sort(function(o,n){return o.priority-n.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==n?t.apply(null,r):r[0]=t.apply(null,r)})),"filter"==n)return r[0]},removeHook:function(o,n,t,i){var r;null!=gform.hooks[o][n]&&(r=(r=gform.hooks[o][n]).filter(function(o,n,r){return!!(null!=i&&i!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][n]=r)}});
+</script>
+<script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.eventOptions={passive:!0},this.userEventListener=this.triggerListener.bind(this),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventListener,e.eventOptions)))}_removeUserInteractionListener(e){this.triggerEvents.forEach((t=>window.removeEventListener(t,e.userEventListener,e.eventOptions)))}triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}async _loadEverythingNow(){this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async),await this._triggerDOMContentLoaded(),await this._triggerWindowLoad(),window.dispatchEvent(new Event("rocket-allScriptsLoaded"))}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._requestAnimFrame(),new Promise((t=>{const n=document.createElement("script");let r;[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type",r=e.nodeValue),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t()),e.parentNode.replaceChild(n,e)}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){var e=document.createDocumentFragment();[...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async].forEach((t=>{const n=t.getAttribute("src");if(n){const t=document.createElement("link");t.href=n,t.rel="preload",t.as="script",e.appendChild(t)}})),document.head.appendChild(e)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(r){e["rocket"+t]=n=r}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._requestAnimFrame(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-load")),await this._requestAnimFrame(),window.rocketonload&&window.rocketonload(),await this._requestAnimFrame(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),window.dispatchEvent(new Event("rocket-pageshow")),await this._requestAnimFrame(),window.rocketonpageshow&&window.rocketonpageshow()}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,r=document.createRange(),i=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const a=document.createDocumentFragment();r.setStart(a,0),a.appendChild(r.createContextualFragment(t)),i.insertBefore(a,o)}}async _requestAnimFrame(){return new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts(["keydown","mousemove","touchmove","touchstart","touchend","wheel"]);e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="">
+<title>Security Best Practices for Your Windows 10 Computer | Carbide</title><link rel="preload" as="style" href="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/css2"><link rel="stylesheet" href="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/css2" media="all" onload="this.media=&#39;all&#39;"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet&#038;display=swap" /></noscript>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+
+<link rel="shortcut icon" href="https://carbidesecure.com/wp-content/themes/carbide_custom/favicon.ico?v=2">
+<link rel="apple-touch-icon-precomposed" href="https://carbidesecure.com/wp-content/themes/carbide_custom/apple-touch-icon-precomposed.png?v=2">
+<link rel="pingback" href="https://carbidesecure.com/resources/security-best-practices-hardening-windows-10/">
+<link rel="alternate" type="application/rss+xml" title="Carbide RSS Feed" href="https://carbidesecure.com/feed/rss/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<!-- This site is optimized with the Yoast SEO Premium plugin v18.1 (Yoast SEO v18.3) - https://yoast.com/wordpress/plugins/seo/ -->
+	<meta name="description" content="Windows 10 comes with great security tools for hardening your computer. Here&#39;s our guide to security best practices for Windows 10.">
+	<link rel="canonical" href="https://carbidesecure.com/resources/security-best-practices-hardening-windows-10/">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Security Best Practices for Your Windows 10 Computer">
+	<meta property="og:description" content="Windows 10 comes with great security tools for hardening your computer. Here&#39;s our guide to security best practices for Windows 10.">
+	<meta property="og:url" content="https://carbidesecure.com/resources/security-best-practices-hardening-windows-10/">
+	<meta property="og:site_name" content="Carbide">
+	<meta property="article:published_time" content="2021-05-21T15:00:00+00:00">
+	<meta property="article:modified_time" content="2022-02-01T19:34:42+00:00">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:label1" content="Written by">
+	<meta name="twitter:data1" content="Shannon McFarland">
+	<meta name="twitter:label2" content="Est. reading time">
+	<meta name="twitter:data2" content="12 minutes">
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://carbidesecure.com/#website","url":"https://carbidesecure.com/","name":"Carbide","description":"Information security and data privacy management platform","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://carbidesecure.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://carbidesecure.com/resources/security-best-practices-hardening-windows-10/#primaryimage","inLanguage":"en-US","url":"","contentUrl":""},{"@type":"WebPage","@id":"https://carbidesecure.com/resources/security-best-practices-hardening-windows-10/#webpage","url":"https://carbidesecure.com/resources/security-best-practices-hardening-windows-10/","name":"Security Best Practices for Your Windows 10 Computer | Carbide","isPartOf":{"@id":"https://carbidesecure.com/#website"},"primaryImageOfPage":{"@id":"https://carbidesecure.com/resources/security-best-practices-hardening-windows-10/#primaryimage"},"datePublished":"2021-05-21T15:00:00+00:00","dateModified":"2022-02-01T19:34:42+00:00","author":{"@id":"https://carbidesecure.com/#/schema/person/d5b920a3ceec49aa4dfdfdefe594080b"},"description":"Windows 10 comes with great security tools for hardening your computer. Here's our guide to security best practices for Windows 10.","breadcrumb":{"@id":"https://carbidesecure.com/resources/security-best-practices-hardening-windows-10/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://carbidesecure.com/resources/security-best-practices-hardening-windows-10/"]}]},{"@type":"BreadcrumbList","@id":"https://carbidesecure.com/resources/security-best-practices-hardening-windows-10/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://carbidesecure.com/"},{"@type":"ListItem","position":2,"name":"GDPR","item":"https://carbidesecure.com/resources/category/gdpr/"},{"@type":"ListItem","position":3,"name":"Security Best Practices for Your Windows 10 Computer"}]},{"@type":"Person","@id":"https://carbidesecure.com/#/schema/person/d5b920a3ceec49aa4dfdfdefe594080b","name":"Shannon McFarland","url":"https://carbidesecure.com/resources/author/shannon/"}]}</script>
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://ws.zoominfo.com/">
+<link rel="dns-prefetch" href="https://www.google-analytics.com/">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com/">
+<link rel="dns-prefetch" href="https://track.hubspot.com/">
+<link rel="dns-prefetch" href="https://static.ads-twitter.com/">
+<link rel="dns-prefetch" href="https://snap.licdn.com/">
+<link rel="dns-prefetch" href="https://secure.gravatar.com/">
+<link rel="dns-prefetch" href="https://rs.fullstory.com/">
+<link rel="dns-prefetch" href="https://px.ads.linkedin.com/">
+<link rel="dns-prefetch" href="https://nexus-websocket-a.intercom.io/">
+<link rel="dns-prefetch" href="https://js.hsadspixel.com/">
+<link rel="dns-prefetch" href="https://js.intercomcdn.com/">
+<link rel="dns-prefetch" href="https://js.hs-banner.com/">
+<link rel="dns-prefetch" href="https://js.hs-analytics.com/">
+<link rel="dns-prefetch" href="https://js-na1.hs-scripts.com/">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+<link href="https://fonts.gstatic.com/" crossorigin="" rel="preconnect">
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<link data-minify="1" rel="stylesheet" href="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/style.css" data-rocket-async="style" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;" onerror="this.removeAttribute(&#39;data-rocket-async&#39;)" type="text/css" media="">
+<script type="text/javascript" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/jquery.min.js.descarga" id="jquery-js"></script>
+<link rel="https://api.w.org/" href="https://carbidesecure.com/wp-json/"><link rel="alternate" type="application/json" href="https://carbidesecure.com/wp-json/wp/v2/posts/6285"><link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://carbidesecure.com/wp-includes/wlwmanifest.xml"> 
+<link rel="shortlink" href="https://carbidesecure.com/?p=6285">
+<link rel="alternate" type="application/json+oembed" href="https://carbidesecure.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcarbidesecure.com%2Fresources%2Fsecurity-best-practices-hardening-windows-10%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://carbidesecure.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcarbidesecure.com%2Fresources%2Fsecurity-best-practices-hardening-windows-10%2F&amp;format=xml">
+
+<link rel="preload" as="font" href="https://carbidesecure.com/wp-content/themes/carbide_custom/fonts/LynstoneWeb-Bold.woff" crossorigin="">
+<link rel="preload" as="font" href="https://carbidesecure.com/wp-content/themes/carbide_custom/fonts/LynstoneWeb-Bold.woff2" crossorigin="">
+<link rel="preload" as="font" href="https://carbidesecure.com/wp-content/themes/carbide_custom/fonts/LynstoneWeb-BoldItalic.woff" crossorigin="">
+<link rel="preload" as="font" href="https://carbidesecure.com/wp-content/themes/carbide_custom/fonts/LynstoneWeb-BoldItalic.woff2" crossorigin="">
+<link rel="preload" as="font" href="https://carbidesecure.com/wp-content/themes/carbide_custom/fonts/LynstoneWeb-Regular.woff" crossorigin="">
+<link rel="preload" as="font" href="https://carbidesecure.com/wp-content/themes/carbide_custom/fonts/LynstoneWeb-Regular.woff2" crossorigin="">
+<link rel="preload" as="font" href="https://carbidesecure.com/wp-content/themes/carbide_custom/fonts/LynstoneWeb-RegularItalic.woff" crossorigin="">
+<link rel="preload" as="font" href="https://carbidesecure.com/wp-content/themes/carbide_custom/fonts/LynstoneWeb-RegularItalic.woff2" crossorigin="">
+<link rel="preload" as="font" href="https://carbidesecure.com/wp-content/themes/carbide_custom/fonts/LynstoneWeb-SemiBold.woff" crossorigin="">
+<link rel="preload" as="font" href="https://carbidesecure.com/wp-content/themes/carbide_custom/fonts/LynstoneWeb-SemiBold.woff2" crossorigin="">
+<link rel="preload" as="font" href="https://carbidesecure.com/wp-content/themes/carbide_custom/fonts/LynstoneWeb-SemiBoldItalic.woff" crossorigin="">
+<link rel="preload" as="font" href="https://carbidesecure.com/wp-content/themes/carbide_custom/fonts/LynstoneWeb-SemiBoldItalic.woff2" crossorigin=""><noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><script>
+/*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
+(function(w){"use strict";if(!w.loadCSS){w.loadCSS=function(){}}
+var rp=loadCSS.relpreload={};rp.support=(function(){var ret;try{ret=w.document.createElement("link").relList.supports("preload")}catch(e){ret=!1}
+return function(){return ret}})();rp.bindMediaToggle=function(link){var finalMedia=link.media||"all";function enableStylesheet(){link.media=finalMedia}
+if(link.addEventListener){link.addEventListener("load",enableStylesheet)}else if(link.attachEvent){link.attachEvent("onload",enableStylesheet)}
+setTimeout(function(){link.rel="stylesheet";link.media="only x"});setTimeout(enableStylesheet,3000)};rp.poly=function(){if(rp.support()){return}
+var links=w.document.getElementsByTagName("link");for(var i=0;i<links.length;i++){var link=links[i];if(link.rel==="preload"&&link.getAttribute("as")==="style"&&!link.getAttribute("data-loadcss")){link.setAttribute("data-loadcss",!0);rp.bindMediaToggle(link)}}};if(!rp.support()){rp.poly();var run=w.setInterval(rp.poly,500);if(w.addEventListener){w.addEventListener("load",function(){rp.poly();w.clearInterval(run)})}else if(w.attachEvent){w.attachEvent("onload",function(){rp.poly();w.clearInterval(run)})}}
+if(typeof exports!=="undefined"){exports.loadCSS=loadCSS}
+else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
+</script><script src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/modernizr-custom.min.js.descarga"></script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T5WZG4R');</script>
+<!-- End Google Tag Manager --><link href="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/jquery.min.js.descarga" rel="preload" as="script"><link href="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/modernizr-custom.min.js.descarga" rel="preload" as="script"><link href="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/plugins.js.descarga" rel="preload" as="script"><link href="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/script.js.descarga" rel="preload" as="script"><link href="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/regenerator-runtime.min.js.descarga" rel="preload" as="script"><link href="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/wp-polyfill.min.js.descarga" rel="preload" as="script"><link href="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/dom-ready.min.js.descarga" rel="preload" as="script"><link href="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/hooks.min.js.descarga" rel="preload" as="script"><link href="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/i18n.min.js.descarga" rel="preload" as="script"><link href="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/a11y.min.js.descarga" rel="preload" as="script"><link href="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/jquery.json.min.js.descarga" rel="preload" as="script"><link href="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/gravityforms.min.js.descarga" rel="preload" as="script"><link href="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/placeholders.jquery.min.js.descarga" rel="preload" as="script"><style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style><script async="" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/integrations"></script></head>
+<body class="post-template-default single single-post postid-6285 single-format-standard" tabindex="0">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T5WZG4R"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div id="container" class="light-header">
+	<header id="site-header" class="hide">
+	<div class="inner wide center">
+		<div class="header-wrap rel">
+			<a class="logo" href="https://carbidesecure.com/">Carbide</a>
+			 						<ul class="nav clean ilb">
+				<li class="sub-toggle" data-toggle="1">																				<a>
+											<span>Product</span>
+					</a>
+															<div id="menu1" class="mega-nav white-bg">
+						<div class="mega-nav-left ilb">
+							<ul class="mega-list clean ilb">
+								<li>
+																											<a href="https://carbidesecure.com/product/platform/" target="_self">
+										<div class="mega-nav-icon">
+											<img width="30" height="30" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/carbide-platform.svg" alt="Platform" class="full entered lazyloaded" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-platform.svg" data-ll-status="loaded"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-platform.svg" alt="Platform" class="full" /></noscript>
+										</div>
+										<div class="mega-nav-label">
+											<span>Platform</span>
+										</div>
+										<div class="mega-nav-text">Enterprise-class security for fast-growing organizations</div>
+									</a>
+																	</li><li>
+																											<a href="https://carbidesecure.com/product/premium-implementation/" target="_self">
+										<div class="mega-nav-icon">
+											<img width="30" height="30" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/implement-security-training.svg" alt="Premium Implementation &amp; Success" class="full entered lazyloaded" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/implement-security-training.svg" data-ll-status="loaded"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/implement-security-training.svg" alt="Premium Implementation &amp; Success" class="full" /></noscript>
+										</div>
+										<div class="mega-nav-label">
+											<span>Premium Implementation &amp; Success<i>Fast Track</i></span>
+										</div>
+										<div class="mega-nav-text">Get expert help to guide your security efforts - without breaking  your budget or your momentum</div>
+									</a>
+																	</li><li>
+																											<a href="https://carbidesecure.com/product/integrations/" target="_self">
+										<div class="mega-nav-icon">
+											<img width="30" height="30" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/validate-audit-connect.svg" alt="Integrations" class="full entered lazyloaded" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/validate-audit-connect.svg" data-ll-status="loaded"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/validate-audit-connect.svg" alt="Integrations" class="full" /></noscript>
+										</div>
+										<div class="mega-nav-label">
+											<span>Integrations</span>
+										</div>
+										<div class="mega-nav-text">Automate evidence collection and keep an eye on security across your business with our integrations</div>
+									</a>
+																	</li><li>
+																											<a href="https://carbidesecure.com/product/pricing/" target="_self">
+										<div class="mega-nav-icon">
+											<img width="30" height="30" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/carbide-pricing.svg" alt="Pricing" class="full entered lazyloaded" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-pricing.svg" data-ll-status="loaded"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-pricing.svg" alt="Pricing" class="full" /></noscript>
+										</div>
+										<div class="mega-nav-label">
+											<span>Pricing</span>
+										</div>
+										<div class="mega-nav-text">Pricing built just for you, whether you need extra guidance or are driving it on your own</div>
+									</a>
+																	</li>							</ul>
+						</div><div class="mega-nav-right ilb">
+							<div class="menu-cta">
+								<div class="menu-cta-image ilb rounded">
+																		<img width="190" height="260" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/carbide-resources-nav-2.svg" data-lazy-srcset="https://carbidesecure.com/wp-content/uploads/2022/02/carbide-resources-nav-2.svg 1x, https://carbidesecure.com/wp-content/uploads/2022/02/carbide-resources-nav-2.svg 2x" alt="Resource Center" class="full entered lazyloaded" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/02/carbide-resources-nav-2.svg" data-ll-status="loaded" srcset="https://carbidesecure.com/wp-content/uploads/2022/02/carbide-resources-nav-2.svg 1x, https://carbidesecure.com/wp-content/uploads/2022/02/carbide-resources-nav-2.svg 2x"><noscript><img width="190" height="260" src="https://carbidesecure.com/wp-content/uploads/2022/02/carbide-resources-nav-2.svg" srcset="https://carbidesecure.com/wp-content/uploads/2022/02/carbide-resources-nav-2.svg 1x, https://carbidesecure.com/wp-content/uploads/2022/02/carbide-resources-nav-2.svg 2x" alt="Resource Center" class="full" /></noscript>
+								</div><div class="menu-cta-content ilb">
+									<h5 class="small-label blue">Resource Center</h5>
+																		<div class="text small-text">
+										<p>Check out our tips and tricks for navigating security and privacy frameworks and regulations</p>
+									</div>
+																																				<a class="arrow-button margin-top" href="https://carbidesecure.com/resources/" target="_self">Resources</a>
+																	</div>
+							</div>
+						</div>					</div>
+									</li><li class="sub-toggle" data-toggle="2">																				<a>
+											<span>Frameworks</span>
+					</a>
+															<div id="menu2" class="mega-nav white-bg no-cta">
+						<div class="mega-nav-left ilb">
+							<ul class="mega-list clean ilb">
+								<li>
+																											<a href="https://carbidesecure.com/frameworks/gdpr-compliance/" target="_self">
+										<div class="mega-nav-icon">
+											<img width="30" height="30" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/validate-reporting-center.svg" alt="GDPR Compliance" class="full entered lazyloaded" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/validate-reporting-center.svg" data-ll-status="loaded"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/validate-reporting-center.svg" alt="GDPR Compliance" class="full" /></noscript>
+										</div>
+										<div class="mega-nav-label">
+											<span>GDPR Compliance</span>
+										</div>
+										<div class="mega-nav-text">Get your business compliant with GDPR's requirements</div>
+									</a>
+																	</li><li>
+																											<a href="https://carbidesecure.com/frameworks/hipaa-compliance/" target="_self">
+										<div class="mega-nav-icon">
+											<img width="30" height="30" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/carbide-hipaa.svg" alt="HIPAA Compliance" class="full entered lazyloaded" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-hipaa.svg" data-ll-status="loaded"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-hipaa.svg" alt="HIPAA Compliance" class="full" /></noscript>
+										</div>
+										<div class="mega-nav-label">
+											<span>HIPAA Compliance</span>
+										</div>
+										<div class="mega-nav-text">Get your business compliant with HIPAA's Security and Privacy requirements</div>
+									</a>
+																	</li><li>
+																											<a href="https://carbidesecure.com/frameworks/iso-27001-compliance/" target="_self">
+										<div class="mega-nav-icon">
+											<img width="30" height="30" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/validate-evidence-collection.svg" alt="ISO 27001 Compliance" class="full entered lazyloaded" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/validate-evidence-collection.svg" data-ll-status="loaded"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/validate-evidence-collection.svg" alt="ISO 27001 Compliance" class="full" /></noscript>
+										</div>
+										<div class="mega-nav-label">
+											<span>ISO 27001 Compliance<i>New</i></span>
+										</div>
+										<div class="mega-nav-text">Conform to ISO 27001's strict set of mandatory requirements</div>
+									</a>
+																	</li><li>
+																											<a href="https://carbidesecure.com/frameworks/pci-dss-compliance/" target="_self">
+										<div class="mega-nav-icon">
+											<img width="30" height="30" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/carbide-pci-dss.svg" alt="PCI DSS Compliance" class="full entered lazyloaded" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-pci-dss.svg" data-ll-status="loaded"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-pci-dss.svg" alt="PCI DSS Compliance" class="full" /></noscript>
+										</div>
+										<div class="mega-nav-label">
+											<span>PCI DSS Compliance<i>New</i></span>
+										</div>
+										<div class="mega-nav-text">Time to ditch the manual checklist for securing cardholder data</div>
+									</a>
+																	</li><li>
+																											<a href="https://carbidesecure.com/frameworks/nist-800-171-compliance/" target="_self">
+										<div class="mega-nav-icon">
+											<img width="30" height="30" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/design-business-continuity-plan-builder.svg" alt="NIST 800 171 Compliance" class="full entered lazyloaded" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/design-business-continuity-plan-builder.svg" data-ll-status="loaded"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/design-business-continuity-plan-builder.svg" alt="NIST 800 171 Compliance" class="full" /></noscript>
+										</div>
+										<div class="mega-nav-label">
+											<span>NIST 800 171 Compliance<i>New</i></span>
+										</div>
+										<div class="mega-nav-text">Simplify management of security requirements for NIST 800 171</div>
+									</a>
+																	</li><li>
+																											<a href="https://carbidesecure.com/frameworks/soc-2-compliance/" target="_self">
+										<div class="mega-nav-icon">
+											<img width="30" height="30" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/04_evolve-gap-analysis.svg" alt="SOC 2 Compliance" class="full entered lazyloaded" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/04_evolve-gap-analysis.svg" data-ll-status="loaded"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/04_evolve-gap-analysis.svg" alt="SOC 2 Compliance" class="full" /></noscript>
+										</div>
+										<div class="mega-nav-label">
+											<span>SOC 2 Compliance</span>
+										</div>
+										<div class="mega-nav-text">Simplify SOC 2 preparation with customized templates and project plans and meet Trust Services Criteria</div>
+									</a>
+																	</li>							</ul>
+						</div>					</div>
+									</li><li class="sub-toggle" data-toggle="3">																				<a>
+											<span>Solutions</span>
+					</a>
+															<div id="menu3" class="mega-nav white-bg">
+						<div class="mega-nav-left ilb">
+							<ul class="mega-list clean ilb">
+								<li>
+																											<a href="https://carbidesecure.com/solutions/build-a-security-program/" target="_self">
+										<div class="mega-nav-icon">
+											<img width="30" height="30" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/design-custom-policy-builder.svg" alt="Build a Program" class="full entered lazyloaded" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/design-custom-policy-builder.svg" data-ll-status="loaded"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/design-custom-policy-builder.svg" alt="Build a Program" class="full" /></noscript>
+										</div>
+										<div class="mega-nav-label">
+											<span>Build a Program</span>
+										</div>
+										<div class="mega-nav-text">Jump start your security &amp; privacy initiative</div>
+									</a>
+																	</li><li>
+																											<a href="https://carbidesecure.com/solutions/solutions-security-compliance/" target="_self">
+										<div class="mega-nav-icon">
+											<img width="30" height="30" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/carbide-get-compliant.svg" alt="Get Compliant" class="full entered lazyloaded" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-get-compliant.svg" data-ll-status="loaded"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-get-compliant.svg" alt="Get Compliant" class="full" /></noscript>
+										</div>
+										<div class="mega-nav-label">
+											<span>Get Compliant</span>
+										</div>
+										<div class="mega-nav-text">Fast track your way to a successful audit</div>
+									</a>
+																	</li><li>
+																											<a href="https://carbidesecure.com/solutions/operationalize-security-privacy/" target="_self">
+										<div class="mega-nav-icon">
+											<img width="30" height="30" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/carbide-careers.svg" alt="Operationalize Security &amp; Privacy" class="full entered lazyloaded" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-careers.svg" data-ll-status="loaded"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-careers.svg" alt="Operationalize Security &amp; Privacy" class="full" /></noscript>
+										</div>
+										<div class="mega-nav-label">
+											<span>Operationalize Security &amp; Privacy</span>
+										</div>
+										<div class="mega-nav-text">Even established programs need ongoing effort to maintain - and sustain - their security posture</div>
+									</a>
+																	</li><li>
+																											<a href="https://carbidesecure.com/solutions/expand-new-markets/" target="_self">
+										<div class="mega-nav-icon">
+											<img width="30" height="30" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/implement-step-by-step.svg" alt="Expand to New Markets" class="full entered lazyloaded" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/implement-step-by-step.svg" data-ll-status="loaded"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/implement-step-by-step.svg" alt="Expand to New Markets" class="full" /></noscript>
+										</div>
+										<div class="mega-nav-label">
+											<span>Expand to New Markets</span>
+										</div>
+										<div class="mega-nav-text">Expand confidently into new regions or verticals, knowing you can meet their security &amp; privacy requirements</div>
+									</a>
+																	</li>							</ul>
+						</div><div class="mega-nav-right ilb">
+							<div class="menu-cta">
+								<div class="menu-cta-content ilb">
+									<h5 class="small-label blue">Case Study: Gtmhub</h5>
+																		<div class="text small-text">
+										<p>Hear how Gtmhub used Carbide for SOC 2 and ISO compliance</p>
+									</div>
+																																				<a class="arrow-button margin-top" href="https://carbidesecure.com/resources/case-study-how-gtmhub-saved-time-getting-soc-2-ready/" target="_self">Watch the Video</a>
+																	</div>
+							</div>
+						</div>					</div>
+									</li><li class="sub-toggle" data-toggle="4">																				<a>
+											<span>Resources</span>
+					</a>
+															<div id="menu4" class="mega-nav white-bg">
+						<div class="mega-nav-left ilb">
+							<ul class="mega-list clean ilb">
+								<li>
+																											<a href="https://carbidesecure.com/resources/" target="_self">
+										<div class="mega-nav-icon">
+											<img width="30" height="30" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/carbide-resources-posts.svg" alt="All Resources" class="full entered lazyloaded" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-resources-posts.svg" data-ll-status="loaded"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-resources-posts.svg" alt="All Resources" class="full" /></noscript>
+										</div>
+										<div class="mega-nav-label">
+											<span>All Resources</span>
+										</div>
+										<div class="mega-nav-text">Broaden your information security knowledge</div>
+									</a>
+																	</li><li>
+																											<a href="https://carbidesecure.com/resources/category/case-study/" target="_self">
+										<div class="mega-nav-icon">
+											<img width="30" height="30" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/carbide-resources.svg" alt="Case Studies" class="full entered lazyloaded" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-resources.svg" data-ll-status="loaded"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-resources.svg" alt="Case Studies" class="full" /></noscript>
+										</div>
+										<div class="mega-nav-label">
+											<span>Case Studies</span>
+										</div>
+										<div class="mega-nav-text">Discover our customers' stories</div>
+									</a>
+																	</li><li>
+																											<a href="https://carbidesecure.com/resources/category/blog-posts/" target="_self">
+										<div class="mega-nav-icon">
+											<img width="30" height="30" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/carbide-blog.svg" alt="Blog" class="full entered lazyloaded" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-blog.svg" data-ll-status="loaded"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-blog.svg" alt="Blog" class="full" /></noscript>
+										</div>
+										<div class="mega-nav-label">
+											<span>Blog</span>
+										</div>
+										<div class="mega-nav-text">Our blog posts</div>
+									</a>
+																	</li><li>
+																											<a href="https://carbidesecure.com/resources/category/video/" target="_self">
+										<div class="mega-nav-icon">
+											<img width="30" height="30" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/carbide-videos.svg" alt="Videos" class="full entered lazyloaded" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-videos.svg" data-ll-status="loaded"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-videos.svg" alt="Videos" class="full" /></noscript>
+										</div>
+										<div class="mega-nav-label">
+											<span>Videos</span>
+										</div>
+										<div class="mega-nav-text">Watch our videos</div>
+									</a>
+																	</li><li>
+																											<a href="https://carbidesecure.com/resources/category/ebooks/" target="_self">
+										<div class="mega-nav-icon">
+											<img width="30" height="30" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/carbide-ebooks.svg" alt="eBooks" class="full entered lazyloaded" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-ebooks.svg" data-ll-status="loaded"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-ebooks.svg" alt="eBooks" class="full" /></noscript>
+										</div>
+										<div class="mega-nav-label">
+											<span>eBooks</span>
+										</div>
+										<div class="mega-nav-text">Read our eBooks</div>
+									</a>
+																	</li><li>
+																											<a href="https://carbidesecure.com/resources/category/news/" target="_self">
+										<div class="mega-nav-icon">
+											<img width="30" height="30" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/carbide-news.svg" alt="News" class="full entered lazyloaded" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-news.svg" data-ll-status="loaded"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-news.svg" alt="News" class="full" /></noscript>
+										</div>
+										<div class="mega-nav-label">
+											<span>News</span>
+										</div>
+										<div class="mega-nav-text">Stay-up-to-date with news updates</div>
+									</a>
+																	</li>							</ul>
+						</div><div class="mega-nav-right ilb">
+							<div class="menu-cta">
+								<div class="menu-cta-image ilb rounded">
+																		<img width="190" height="260" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/carbide-headshot.svg" data-lazy-srcset="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-headshot.svg 1x, https://carbidesecure.com/wp-content/uploads/2022/01/carbide-headshot.svg 2x" alt="Beginner&#39;s Guide to Information Security" class="full entered lazyloaded" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-headshot.svg" data-ll-status="loaded" srcset="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-headshot.svg 1x, https://carbidesecure.com/wp-content/uploads/2022/01/carbide-headshot.svg 2x"><noscript><img width="190" height="260" src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-headshot.svg" srcset="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-headshot.svg 1x, https://carbidesecure.com/wp-content/uploads/2022/01/carbide-headshot.svg 2x" alt="Beginner's Guide to Information Security" class="full" /></noscript>
+								</div><div class="menu-cta-content ilb">
+									<h5 class="small-label blue">Beginner's Guide to Information Security</h5>
+																		<div class="text small-text">
+										<p>Everything you need to know about keeping your business secure</p>
+									</div>
+																																				<a class="arrow-button margin-top" href="https://carbidesecure.com/beginners-guide-to-information-security/" target="_self">Learn More</a>
+																	</div>
+							</div>
+						</div>					</div>
+									</li><li class="sub-toggle" data-toggle="5">																				<a>
+											<span>Company</span>
+					</a>
+															<div id="menu5" class="mega-nav white-bg no-cta">
+						<div class="mega-nav-left ilb">
+							<ul class="mega-list clean ilb">
+								<li>
+																											<a href="https://carbidesecure.com/company/" target="_self">
+										<div class="mega-nav-icon">
+											<img width="30" height="30" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/04_evolve-partner-ecosystem.svg" alt="About" class="full entered lazyloaded" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/04_evolve-partner-ecosystem.svg" data-ll-status="loaded"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/04_evolve-partner-ecosystem.svg" alt="About" class="full" /></noscript>
+										</div>
+										<div class="mega-nav-label">
+											<span>About</span>
+										</div>
+										<div class="mega-nav-text">At Carbide, we’re making it easier to embed security and privacy into the DNA of every organization -- including yours</div>
+									</a>
+																	</li><li>
+																											<a href="https://carbidesecure.com/company/careers/" target="_self">
+										<div class="mega-nav-icon">
+											<img width="30" height="30" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/carbide-careers-1.svg" alt="Careers" class="full entered lazyloaded" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-careers-1.svg" data-ll-status="loaded"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-careers-1.svg" alt="Careers" class="full" /></noscript>
+										</div>
+										<div class="mega-nav-label">
+											<span>Careers</span>
+										</div>
+										<div class="mega-nav-text">A more secure, privacy-conscious world is possible -  Join us to help make it happen</div>
+									</a>
+																	</li><li>
+																											<a href="https://carbidesecure.com/company/contact/" target="_self">
+										<div class="mega-nav-icon">
+											<img width="30" height="30" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/design-asset-manager.svg" alt="Contact" class="full entered lazyloaded" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/design-asset-manager.svg" data-ll-status="loaded"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/design-asset-manager.svg" alt="Contact" class="full" /></noscript>
+										</div>
+										<div class="mega-nav-label">
+											<span>Contact</span>
+										</div>
+										<div class="mega-nav-text">Learn more about how Carbide can help your company or organization</div>
+									</a>
+																	</li>							</ul>
+						</div>					</div>
+									</li><li>
+					<a href="https://securicy.app/" target="_blank">Login</a>
+				</li>			</ul>
+												<a class="button demo-button" href="https://carbidesecure.com/book-a-demo/" target="_self">
+				<span>Start Now</span>
+			</a>
+								</div>
+	</div>
+		<a class="nav-toggle">
+		<div>Toggle Navigation</div>
+		<div>Toggle Navigation</div>
+		<div>Toggle Navigation</div>
+	</a>
+	</header>
+<div class="nav-wrap cover">
+	<div class="nav-box-pad white-bg rounded shadow rel line-footer">
+		<div class="nav-col">
+			<div class="nav-box-top">
+				<ul class="mobile-nav-main clean">
+																																								<li>
+						<a class="mobile-toggle" data-mobile="1">Product</a>
+					</li>
+																																																		<li>
+						<a class="mobile-toggle" data-mobile="2">Frameworks</a>
+					</li>
+																																																		<li>
+						<a class="mobile-toggle" data-mobile="3">Solutions</a>
+					</li>
+																																																		<li>
+						<a class="mobile-toggle" data-mobile="4">Resources</a>
+					</li>
+																																																		<li>
+						<a class="mobile-toggle" data-mobile="5">Company</a>
+					</li>
+																									<li>
+						<a href="https://securicy.app/" target="_blank">Login</a>
+					</li>
+									</ul>
+												<a class="button" href="https://carbidesecure.com/book-a-demo/" target="_self">
+					<span>Book a Demo</span>
+				</a>
+							</div>
+		</div>
+								<div class="nav-col-offset nav-slide1">
+			<div class="nav-box-top">
+				<a class="mobile-nav-close">Main Menu</a>
+				<ul class="mobile-subnav clean">
+										<li>
+																		<a href="https://carbidesecure.com/product/platform/" target="_self">
+							<div class="mega-nav-icon">
+								<img width="30" height="30" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%2030%2030&#39;%3E%3C/svg%3E" alt="Platform" class="full" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-platform.svg"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-platform.svg" alt="Platform" class="full" /></noscript>
+							</div>
+							<div class="mega-nav-label">
+								<span>Platform</span>
+							</div>
+						</a>
+											</li>
+										<li>
+																		<a href="https://carbidesecure.com/product/premium-implementation/" target="_self">
+							<div class="mega-nav-icon">
+								<img width="30" height="30" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%2030%2030&#39;%3E%3C/svg%3E" alt="Premium Implementation &amp; Success" class="full" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/implement-security-training.svg"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/implement-security-training.svg" alt="Premium Implementation &amp; Success" class="full" /></noscript>
+							</div>
+							<div class="mega-nav-label">
+								<span>Premium Implementation &amp; Success<i>Fast Track</i></span>
+							</div>
+						</a>
+											</li>
+										<li>
+																		<a href="https://carbidesecure.com/product/integrations/" target="_self">
+							<div class="mega-nav-icon">
+								<img width="30" height="30" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%2030%2030&#39;%3E%3C/svg%3E" alt="Integrations" class="full" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/validate-audit-connect.svg"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/validate-audit-connect.svg" alt="Integrations" class="full" /></noscript>
+							</div>
+							<div class="mega-nav-label">
+								<span>Integrations</span>
+							</div>
+						</a>
+											</li>
+										<li>
+																		<a href="https://carbidesecure.com/product/pricing/" target="_self">
+							<div class="mega-nav-icon">
+								<img width="30" height="30" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%2030%2030&#39;%3E%3C/svg%3E" alt="Pricing" class="full" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-pricing.svg"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-pricing.svg" alt="Pricing" class="full" /></noscript>
+							</div>
+							<div class="mega-nav-label">
+								<span>Pricing</span>
+							</div>
+						</a>
+											</li>
+									</ul>
+			</div>
+		</div>
+												<div class="nav-col-offset nav-slide2">
+			<div class="nav-box-top">
+				<a class="mobile-nav-close">Main Menu</a>
+				<ul class="mobile-subnav clean">
+										<li>
+																		<a href="https://carbidesecure.com/frameworks/gdpr-compliance/" target="_self">
+							<div class="mega-nav-icon">
+								<img width="30" height="30" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%2030%2030&#39;%3E%3C/svg%3E" alt="GDPR Compliance" class="full" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/validate-reporting-center.svg"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/validate-reporting-center.svg" alt="GDPR Compliance" class="full" /></noscript>
+							</div>
+							<div class="mega-nav-label">
+								<span>GDPR Compliance</span>
+							</div>
+						</a>
+											</li>
+										<li>
+																		<a href="https://carbidesecure.com/frameworks/hipaa-compliance/" target="_self">
+							<div class="mega-nav-icon">
+								<img width="30" height="30" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%2030%2030&#39;%3E%3C/svg%3E" alt="HIPAA Compliance" class="full" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-hipaa.svg"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-hipaa.svg" alt="HIPAA Compliance" class="full" /></noscript>
+							</div>
+							<div class="mega-nav-label">
+								<span>HIPAA Compliance</span>
+							</div>
+						</a>
+											</li>
+										<li>
+																		<a href="https://carbidesecure.com/frameworks/iso-27001-compliance/" target="_self">
+							<div class="mega-nav-icon">
+								<img width="30" height="30" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%2030%2030&#39;%3E%3C/svg%3E" alt="ISO 27001 Compliance" class="full" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/validate-evidence-collection.svg"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/validate-evidence-collection.svg" alt="ISO 27001 Compliance" class="full" /></noscript>
+							</div>
+							<div class="mega-nav-label">
+								<span>ISO 27001 Compliance<i>New</i></span>
+							</div>
+						</a>
+											</li>
+										<li>
+																		<a href="https://carbidesecure.com/frameworks/pci-dss-compliance/" target="_self">
+							<div class="mega-nav-icon">
+								<img width="30" height="30" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%2030%2030&#39;%3E%3C/svg%3E" alt="PCI DSS Compliance" class="full" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-pci-dss.svg"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-pci-dss.svg" alt="PCI DSS Compliance" class="full" /></noscript>
+							</div>
+							<div class="mega-nav-label">
+								<span>PCI DSS Compliance<i>New</i></span>
+							</div>
+						</a>
+											</li>
+										<li>
+																		<a href="https://carbidesecure.com/frameworks/nist-800-171-compliance/" target="_self">
+							<div class="mega-nav-icon">
+								<img width="30" height="30" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%2030%2030&#39;%3E%3C/svg%3E" alt="NIST 800 171 Compliance" class="full" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/design-business-continuity-plan-builder.svg"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/design-business-continuity-plan-builder.svg" alt="NIST 800 171 Compliance" class="full" /></noscript>
+							</div>
+							<div class="mega-nav-label">
+								<span>NIST 800 171 Compliance<i>New</i></span>
+							</div>
+						</a>
+											</li>
+										<li>
+																		<a href="https://carbidesecure.com/frameworks/soc-2-compliance/" target="_self">
+							<div class="mega-nav-icon">
+								<img width="30" height="30" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%2030%2030&#39;%3E%3C/svg%3E" alt="SOC 2 Compliance" class="full" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/04_evolve-gap-analysis.svg"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/04_evolve-gap-analysis.svg" alt="SOC 2 Compliance" class="full" /></noscript>
+							</div>
+							<div class="mega-nav-label">
+								<span>SOC 2 Compliance</span>
+							</div>
+						</a>
+											</li>
+									</ul>
+			</div>
+		</div>
+												<div class="nav-col-offset nav-slide3">
+			<div class="nav-box-top">
+				<a class="mobile-nav-close">Main Menu</a>
+				<ul class="mobile-subnav clean">
+										<li>
+																		<a href="https://carbidesecure.com/solutions/build-a-security-program/" target="_self">
+							<div class="mega-nav-icon">
+								<img width="30" height="30" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%2030%2030&#39;%3E%3C/svg%3E" alt="Build a Program" class="full" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/design-custom-policy-builder.svg"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/design-custom-policy-builder.svg" alt="Build a Program" class="full" /></noscript>
+							</div>
+							<div class="mega-nav-label">
+								<span>Build a Program</span>
+							</div>
+						</a>
+											</li>
+										<li>
+																		<a href="https://carbidesecure.com/solutions/solutions-security-compliance/" target="_self">
+							<div class="mega-nav-icon">
+								<img width="30" height="30" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%2030%2030&#39;%3E%3C/svg%3E" alt="Get Compliant" class="full" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-get-compliant.svg"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-get-compliant.svg" alt="Get Compliant" class="full" /></noscript>
+							</div>
+							<div class="mega-nav-label">
+								<span>Get Compliant</span>
+							</div>
+						</a>
+											</li>
+										<li>
+																		<a href="https://carbidesecure.com/solutions/operationalize-security-privacy/" target="_self">
+							<div class="mega-nav-icon">
+								<img width="30" height="30" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%2030%2030&#39;%3E%3C/svg%3E" alt="Operationalize Security &amp; Privacy" class="full" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-careers.svg"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-careers.svg" alt="Operationalize Security &amp; Privacy" class="full" /></noscript>
+							</div>
+							<div class="mega-nav-label">
+								<span>Operationalize Security &amp; Privacy</span>
+							</div>
+						</a>
+											</li>
+										<li>
+																		<a href="https://carbidesecure.com/solutions/expand-new-markets/" target="_self">
+							<div class="mega-nav-icon">
+								<img width="30" height="30" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%2030%2030&#39;%3E%3C/svg%3E" alt="Expand to New Markets" class="full" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/implement-step-by-step.svg"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/implement-step-by-step.svg" alt="Expand to New Markets" class="full" /></noscript>
+							</div>
+							<div class="mega-nav-label">
+								<span>Expand to New Markets</span>
+							</div>
+						</a>
+											</li>
+									</ul>
+			</div>
+		</div>
+												<div class="nav-col-offset nav-slide4">
+			<div class="nav-box-top">
+				<a class="mobile-nav-close">Main Menu</a>
+				<ul class="mobile-subnav clean">
+										<li>
+																		<a href="https://carbidesecure.com/resources/" target="_self">
+							<div class="mega-nav-icon">
+								<img width="30" height="30" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%2030%2030&#39;%3E%3C/svg%3E" alt="All Resources" class="full" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-resources-posts.svg"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-resources-posts.svg" alt="All Resources" class="full" /></noscript>
+							</div>
+							<div class="mega-nav-label">
+								<span>All Resources</span>
+							</div>
+						</a>
+											</li>
+										<li>
+																		<a href="https://carbidesecure.com/resources/category/case-study/" target="_self">
+							<div class="mega-nav-icon">
+								<img width="30" height="30" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%2030%2030&#39;%3E%3C/svg%3E" alt="Case Studies" class="full" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-resources.svg"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-resources.svg" alt="Case Studies" class="full" /></noscript>
+							</div>
+							<div class="mega-nav-label">
+								<span>Case Studies</span>
+							</div>
+						</a>
+											</li>
+										<li>
+																		<a href="https://carbidesecure.com/resources/category/blog-posts/" target="_self">
+							<div class="mega-nav-icon">
+								<img width="30" height="30" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%2030%2030&#39;%3E%3C/svg%3E" alt="Blog" class="full" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-blog.svg"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-blog.svg" alt="Blog" class="full" /></noscript>
+							</div>
+							<div class="mega-nav-label">
+								<span>Blog</span>
+							</div>
+						</a>
+											</li>
+										<li>
+																		<a href="https://carbidesecure.com/resources/category/video/" target="_self">
+							<div class="mega-nav-icon">
+								<img width="30" height="30" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%2030%2030&#39;%3E%3C/svg%3E" alt="Videos" class="full" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-videos.svg"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-videos.svg" alt="Videos" class="full" /></noscript>
+							</div>
+							<div class="mega-nav-label">
+								<span>Videos</span>
+							</div>
+						</a>
+											</li>
+										<li>
+																		<a href="https://carbidesecure.com/resources/category/ebooks/" target="_self">
+							<div class="mega-nav-icon">
+								<img width="30" height="30" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%2030%2030&#39;%3E%3C/svg%3E" alt="eBooks" class="full" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-ebooks.svg"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-ebooks.svg" alt="eBooks" class="full" /></noscript>
+							</div>
+							<div class="mega-nav-label">
+								<span>eBooks</span>
+							</div>
+						</a>
+											</li>
+										<li>
+																		<a href="https://carbidesecure.com/resources/category/news/" target="_self">
+							<div class="mega-nav-icon">
+								<img width="30" height="30" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%2030%2030&#39;%3E%3C/svg%3E" alt="News" class="full" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-news.svg"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-news.svg" alt="News" class="full" /></noscript>
+							</div>
+							<div class="mega-nav-label">
+								<span>News</span>
+							</div>
+						</a>
+											</li>
+									</ul>
+			</div>
+		</div>
+												<div class="nav-col-offset nav-slide5">
+			<div class="nav-box-top">
+				<a class="mobile-nav-close">Main Menu</a>
+				<ul class="mobile-subnav clean">
+										<li>
+																		<a href="https://carbidesecure.com/company/" target="_self">
+							<div class="mega-nav-icon">
+								<img width="30" height="30" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%2030%2030&#39;%3E%3C/svg%3E" alt="About" class="full" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/04_evolve-partner-ecosystem.svg"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/04_evolve-partner-ecosystem.svg" alt="About" class="full" /></noscript>
+							</div>
+							<div class="mega-nav-label">
+								<span>About</span>
+							</div>
+						</a>
+											</li>
+										<li>
+																		<a href="https://carbidesecure.com/company/careers/" target="_self">
+							<div class="mega-nav-icon">
+								<img width="30" height="30" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%2030%2030&#39;%3E%3C/svg%3E" alt="Careers" class="full" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-careers-1.svg"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/carbide-careers-1.svg" alt="Careers" class="full" /></noscript>
+							</div>
+							<div class="mega-nav-label">
+								<span>Careers</span>
+							</div>
+						</a>
+											</li>
+										<li>
+																		<a href="https://carbidesecure.com/company/contact/" target="_self">
+							<div class="mega-nav-icon">
+								<img width="30" height="30" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%2030%2030&#39;%3E%3C/svg%3E" alt="Contact" class="full" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/design-asset-manager.svg"><noscript><img width="30" height="30" src="https://carbidesecure.com/wp-content/uploads/2022/01/design-asset-manager.svg" alt="Contact" class="full" /></noscript>
+							</div>
+							<div class="mega-nav-label">
+								<span>Contact</span>
+							</div>
+						</a>
+											</li>
+									</ul>
+			</div>
+		</div>
+							</div>
+</div>
+	<div id="main" role="main">
+		<section class="page-block post-top vlt-blue-bg">
+			<div class="inner rel">
+				<div class="post-top-left">
+																				<h4 class="small-label blue margin-bottom">Blog Posts</h4>
+										<h1 class="small-headline post-title blue">Security Best Practices for Your Windows 10 Computer</h1>
+				</div><div class="post-top-image-wrap">
+					<div class="post-top-image rounded shadow">
+												<img width="440" height="310" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/blog-placeholder.svg" alt="Security Best Practices for Your Windows 10 Computer" class="full rounded entered lazyloaded" data-lazy-src="https://carbidesecure.com/wp-content/themes/carbide_custom/images/blog-placeholder.svg" data-ll-status="loaded"><noscript><img width="440" height="310" src="https://carbidesecure.com/wp-content/themes/carbide_custom/images/blog-placeholder.svg" alt="Security Best Practices for Your Windows 10 Computer" class="full rounded" /></noscript>
+											</div>
+				</div>
+			</div>
+		</section>
+		<div class="post-content-wrap border-left border-right">
+			<div class="post-content-bg white-bg rounded">
+				<div class="inner rel">
+					<div class="post-content-blocks">
+													<div class="post-content-block post-text-block">
+								<div class="text">
+									
+<p>Windows 10 comes with tons of great features for your business, including privacy and security tools for hardening your computer. This guide gives you our top tips and best practices for securing your computer and business operations. Many of these tips are pretty straightforward, free, or even seem deceptively simple. But together, these give you the essential cybersecurity tools and best practices for Windows 10 computers at your business.&nbsp;</p>
+
+
+
+<p>Features that someone might consider “convenient” for everyday use can, unfortunately, make it easy for hackers to access your PC. For computers with access to large customer databases or government systems, optimizing your security settings is a critical task.&nbsp;Failure to properly secure your computer can leave you exposed and at risk of cyber-attacks by bad actors. Businesses’ looking to mitigate risks on the employee and organizational level should get compliant with industry standards and frameworks like <a href="https://carbidesecure.com/resources/what-b2b-companies-need-to-know-about-soc-2-compliance/">SOC 2</a> and <a href="https://carbidesecure.com/resources/why-iso-27001-compliance-is-important-for-your-business/">ISO 27001</a> because they were designed to help companies demonstrate and prove their commitment to security.</p>
+
+
+
+<p>These days companies develop information security policies, which set guidelines and communicate anything employees are responsible for doing. If your business uses Carbide’s app to manage your infosec program, you can sign in and review your company policies. It’s simple to check any procedures in our guide below that you should follow.</p>
+
+
+
+<p>So let’s look at these tips to set up your computer to protect yourself and your data.</p>
+
+
+
+<blockquote class="wp-block-quote">
+<p><strong>10 Security Tips to Harden Your Computer and Protect Your Business</strong></p>
+<p><a href="https://carbidesecure.com/resources/security-best-practices-hardening-windows-10/#auto-login">1. Disable Windows 10 automatic login. </a></p>
+<p><a href="https://carbidesecure.com/resources/security-best-practices-hardening-windows-10/#screensaver-password">2. Set a password with your screensaver.&nbsp;</a></p>
+<p><a href="https://carbidesecure.com/resources/security-best-practices-hardening-windows-10/#firewall">3. Turn on your firewall.&nbsp;</a></p>
+<p><a href="https://carbidesecure.com/resources/security-best-practices-hardening-windows-10/#remote-access">4. Disable remote access.&nbsp;</a></p>
+<p><a href="https://carbidesecure.com/resources/security-best-practices-hardening-windows-10/#antivirus">5. Enable or install antivirus protection tools.</a></p>
+<p><a href="https://carbidesecure.com/resources/security-best-practices-hardening-windows-10/#security-updates">6. Enable auto-updates for your operating system.</a>&nbsp;</p>
+<p><a href="https://carbidesecure.com/resources/security-best-practices-hardening-windows-10/#file-backups">7. Set up file backups.</a></p>
+<p><a href="https://carbidesecure.com/resources/security-best-practices-hardening-windows-10/#encryption">8. Turn on encryption.&nbsp;</a>&nbsp;</p>
+<p><a href="https://carbidesecure.com/resources/security-best-practices-hardening-windows-10/#user-accounts">9. Set up your user accounts.&nbsp;</a></p>
+<p><a href="https://carbidesecure.com/resources/security-best-practices-hardening-windows-10/#password-manager">10. Set up a password manager.</a></p>
+<p>&nbsp;</p>
+</blockquote>
+
+
+
+<h2>How Can You Harden Your PC?</h2>
+
+
+
+<p>Hardening your Windows 10 computer means that you’re configuring the security settings. This reduces opportunities for a virus, hacker, ransomware, or another kind of cyberattack. Our guide here includes how to use antivirus tools, disable auto-login, turn off remote access, set up encryption, and more.</p>
+
+
+
+<p>You can think about security for your computer (with all your personal, financial, or company data), much like you’d think about security for your house. Hardening your PC is like you’re closing the doors and checking the locks. You want to make it harder for hackers to break in.</p>
+
+
+
+<p>It might be convenient to leave the front door to your house unlocked or even open all the time. That way, you could avoid the hassle of carrying keys or even bothering with doorknobs. But doesn’t that go against the common sense we live by every day? We learn at a young age to close the door and lock it when you leave.&nbsp;</p>
+
+
+
+<p>Leaving your door wide open is like an invitation for anyone to walk into your house. You’d make yourself an easy target for burglary.&nbsp;&nbsp;</p>
+
+
+
+<h2 id="mce_18">Guide for Security Best Practices for Windows 10</h2>
+
+
+
+<p>Many of the settings or features we have on our computers function like “doors.” There are several different entrances and ways to access your PC as if they were doors that you could close and lock. Or doors that you can leave wide open, leaving your house vulnerable, so anyone can walk in and do whatever they want with your computer and personal data.</p>
+
+
+
+<p>Access to your computer means they could steal or erase your data. They can encrypt your hard drive with ransomware and threaten to wipe your data unless you pay a ransom fee. They could install malicious code that corrupts your entire system. Or they could connect to all the computers in your company network and cause widespread damage to your business.&nbsp;</p>
+
+
+
+<p>You can use the below security best practices like a checklist for hardening your computer. With a couple of changes from the Control Panel and other techniques, you can make sure you have all security essentials set up to harden your operating system.&nbsp;</p>
+
+
+
+<h2 id="hardening-guide">PC Hardening Guide: Protect Your Windows 10 Computer from Hackers, Viruses, Ransomware, and More</h2>
+
+
+
+<h3 id="auto-login">1. Disable Windows 10 automatic login.</h3>
+
+
+
+<p>This is one of the first settings that you should change or check on your computer.&nbsp;</p>
+
+
+
+<p>When you first set up a new PC with Windows 10, you create a user account. By default, your new account is set to log in <em>automatically</em> at startup. If you’re at home all the time or don’t have access to any sensitive data, then this might not be a problem. But it can create a serious security risk if anyone can open your computer, then immediately get access to your data and company systems. This is especially important if you <a href="https://carbidesecure.com/resources/how-to-protect-yourself-when-you-travel/">travel with a laptop</a>, bringing it with you to places like a coffee shop, airport, or open co-working spaces.&nbsp;</p>
+
+
+
+<p>Depending on the security policies at your company, this may also be something your employer requires.</p>
+
+
+
+<p>It is easy to disable, so in only a few steps, you can turn off auto-login. Get the steps here: <a href="https://carbidesecure.com/resources/how-to-disable-automatic-login-in-windows-10/">How to Disable Automatic Login in Windows 10</a></p>
+
+
+
+<p><strong>Bonus tip:</strong> If you do travel with your laptop or work from public places, you may want to get a privacy screen protector. Those can make the screen look dark to keep a criminal from “shoulder surfing” and seeing your private information. Privacy screens can also reduce glare and make the screen easier on your eyes, another reason to get one.&nbsp;</p>
+
+
+
+<h3 id="screensaver-password">2. Set a password with your screensaver.&nbsp;</h3>
+
+
+
+<p>There’s no reason someone in your office, home, or travel location should be able to access your system if you step away for a few minutes. It’s a good idea to make sure your PC automatically locks after a set period of inactivity.&nbsp;</p>
+
+
+
+<p>While it’s actually a security setting, you’ll find it inside the “Appearances and Personalization” section within your Control Panel. You can turn this on when you adjust your screensaver settings. It’s easy to choose the time until a screensaver displays, set the screen saver, and turn on the setting that brings you back to the login screen when you come back.</p>
+
+
+
+<p>Security starts with following the most basic protocols. So make sure you password protect your PC.&nbsp;</p>
+
+
+
+<p>Get the steps for password protecting your PC after a screensaver here: <a href="https://carbidesecure.com/resources/how-do-i-set-a-windows-screen-saver-password/">How to Set a Windows Screen Saver Password</a></p>
+
+
+
+<h3 id="firewall">3. Turn on your firewall.&nbsp;</h3>
+
+
+
+<p>In recent versions of Windows operating systems, including Windows 10, your firewall is enabled by default. Easy enough! You’re probably all set here. But it doesn’t hurt to check your settings to make sure your firewall wasn’t turned off.&nbsp;</p>
+
+
+
+<p>Windows Firewall is a built-in network security system. It’s designed to prevent unauthorized access to or from your private network.&nbsp;</p>
+
+
+
+<p>Network firewalls are frequently used to prevent unauthorized Internet users from accessing private networks connected to the Internet, especially intranets. All messages entering or leaving the intranet would pass through the firewall, which examines each message and blocks any that don’t meet the specified security criteria.</p>
+
+
+
+<p>If you want to check the settings for your Windows Firewall, we have instructions for you here: <a href="https://carbidesecure.com/resources/how-to-turn-on-the-firewall-in-windows-10/">How to Turn on the Firewall in Windows 10</a></p>
+
+
+
+<h3 id="remote-access">4. Disable remote access.&nbsp;</h3>
+
+
+
+<p>In Windows 10, you have the Windows Remote Desktop feature that allows you (or others!) to connect to your computer remotely over a network connection. Remote access allows someone to control everything on your computer as if they are directly connected to it.&nbsp;</p>
+
+
+
+<p>Unfortunately, <a href="https://smallbiztrends.com/2018/10/rdp-hacking.html" target="_blank" rel="noopener">hackers can exploit Windows Remote Desktop</a>. In more than one cyberattack, criminals have gained to tried to gain control of remote systems, installed malware, or stolen databases full of personal information.&nbsp;</p>
+
+
+
+<p>By default, the feature is disabled. Once enabled, however, it’s easy for you to disable it again. You want to keep the remote access feature turned off, except when you are actively using it.&nbsp;</p>
+
+
+
+<p>We have the steps you need to turn off remote access in Windows 10 here: <a href="https://carbidesecure.com/resources/how-to-disable-remote-access-in-windows-10/">How to Disable Remote Access in Windows 10</a></p>
+
+
+
+<h3 id="antivirus">5. Enable or install antivirus protection tools.</h3>
+
+
+
+<p>You can prevent viruses and malicious code using your built-in tools in Windows 10. You can also install additional antivirus software if you need to (we have some of our favorite listed inside Carbide’s Marketplace).</p>
+
+
+
+<p>Enterprise editions of Windows 10 include <a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-atp/windows-defender-advanced-threat-protection" target="_blank" rel="noopener">Windows Defender Advanced Threat Protection</a>, a security platform that monitors endpoints such as Windows 10 PCs using behavioral sensors. Microsoft’s SmartScreen technology is another built-in feature that scans downloads and blocks the execution of those that are known to be malicious.&nbsp;</p>
+
+
+
+<p>Learn more about enabling your Windows 10 antivirus tools here: <a href="https://carbidesecure.com/resources/how-to-check-for-viruses-using-built-in-tools-in-windows-10/">How to Check for Viruses Using Built-in Tools in Windows 10</a></p>
+
+
+
+<h3 id="security-updates">6. Enable auto-updates for your operating system.&nbsp;</h3>
+
+
+
+<p><strong>You should install urgent security updates right away.</strong> Some Carbide patches are critical fixes for protecting you from a new type of malware or cyberattack.&nbsp;</p>
+
+
+
+<p>Your company may have a security policy about updating your operating system too. You’ll want to see if you’re supposed to install updates right away, or if your IT team will tell you when you should install updates. Depending on your company, your IT team may be responsible for updating your operating system.</p>
+
+
+
+<p>Ultimately, don’t be that person who ignores operating system updates for critical security patches. (Even if you heard about a design change that you might not like). Microsoft does keep it relatively simple by setting up two different types of updates: quality updates, feature updates. They’ve long also kept a schedule for updates, known in the IT world as Patch Tuesday.&nbsp;</p>
+
+
+
+<p>If your business is running on an older version of Windows? Make sure you upgrade your operating systems before they become a security nightmare. <a href="https://www.cnet.com/news/windows-10-why-its-finally-time-to-upgrade-from-windows-7/" target="_blank" rel="noopener">Support for Windows 7 ends in January 2020</a>, which means anyone still using it (or an older OS!) will be at risk for new malware or virus attacks.&nbsp;</p>
+
+
+
+<p>See more about enabling auto-updates here: <a href="https://carbidesecure.com/resources/how-to-enable-auto-updates-in-windows-10/">How to Enable Auto Updates in Windows 10</a></p>
+
+
+
+<h3 id="file-backups">7. Set up file backups.&nbsp;</h3>
+
+
+
+<p>Routine file backups are essential for protecting yourself from losing important data if you have a sudden hard-drive failure or your PC get a virus. Windows 10 comes with tools and features that make backing up your data easy.&nbsp;</p>
+
+
+
+<ul>
+<li>You can use File History and <a href="https://carbidesecure.com/resources/how-to-set-up-file-backups-in-windows-10/">other free tools in Windows 10 to create file backups.</a>&nbsp;</li>
+<li>You can create a recovery drive <a href="https://www.pcworld.com/article/2095481/if-we-show-you-how-to-back-up-your-pc-for-free-will-you-finally-do-it.html" target="_blank" rel="noopener">to restore your system from an image backup.</a>&nbsp;</li>
+<li>With a storage-sync-and-share service, you can put your backups in the cloud. These are easy to set up, especially some of the most popular ones like OneDrive, Dropbox, or Google Drive.</li>
+</ul>
+
+
+
+<p>For large companies, or even startups and small businesses, file backups are critical for recovering from a cyberattack incident or disaster. After the devastating cyberattack <a href="https://slate.com/technology/2019/11/sandworm-andy-greenberg-excerpt-notpetya-hospitals.html" target="_blank" rel="noopener">known as NotPetya</a>, system backups were crucial for recovery when malware crippled the IT systems of multiple global companies and government agencies.&nbsp;</p>
+
+
+
+<p>Start simple and see how you can use the built-in File History tool: <a href="https://carbidesecure.com/resources/how-to-set-up-file-backups-in-windows-10/">How to Set Up File Backups in Windows 10</a>.&nbsp;</p>
+
+
+
+<h3 id="encryption">8. Turn on encryption.&nbsp;&nbsp;</h3>
+
+
+
+<p>BitLocker is Microsoft’s proprietary disk encryption software, included with Windows 10. Encryption is a security technique that might sound intimidating, but in this case, it is as easy as clicking “Turn on Bitlocker.” Bitlocker has you set a password, gives you a recovery key, and shows you an option to “Encrypt Entire Drive.”</p>
+
+
+
+<p>Encrypting your data with Bitlocker is free, and you don’t have to install anything. Encryption encodes your data so only authorized users with your password can view, copy, or make changes. If your encrypted information were stolen, it would be unusable. Encrypting your entire drive also protects against unauthorized changes to your system, like firmware-level malware.&nbsp;</p>
+
+
+
+<p>Encryption is a best practice, commonly included in company security policies, including Carbide’s infosec app for businesses.</p>
+
+
+
+<p>See our full instruction here to enable Bitlocker encryption: <a href="https://carbidesecure.com/resources/how-to-encrypt-a-hard-drive-with-bitlocker-in-windows-10/">How to Encrypt a Hard Drive in Windows 10</a>&nbsp;</p>
+
+
+
+<h3 id="user-accounts">9. Set up your user accounts.&nbsp;</h3>
+
+
+
+<p>How you set up accounts on your computer helps secure your device from the start. If you don’t have an IT department telling you what kind of account to set up, it’s up to you to decide between using a local account or a Microsoft account. Using a Microsoft account has several benefits since you can enable two-factor authentication, sync your data, and get options for password recovery<strong>.</strong> There are <a href="https://www.zdnet.com/article/the-windows-10-security-guide-how-to-safeguard-your-business/" target="_blank" rel="noopener">even more options and security features</a> for accounts using Azure Active Directory (including central management) if your business is set up with a custom domain.&nbsp;</p>
+
+
+
+<p>You can also set up multiple accounts with different levels of permissions:&nbsp;</p>
+
+
+
+<ul>
+<li><strong>Administrator Account</strong>: The first account on a Windows 10 PC is a member of the Administrators group and has the right to install software and modify the system configuration.&nbsp;</li>
+<li><strong>Standard Account: </strong>Additional accounts can and should be set up as Standard users. You can use a Standard user account for your regular use, which limits access to the Administrator account, preventing a nontechnical user from inadvertently making changes to your system or helping block an unwanted software installation.</li>
+<li><strong>Guest Account: </strong>By default, a Guest account has a blank password. Since the Guest account provides anonymous access to your computer, it is a security risk and a best practice to leave the Guest account disabled.</li>
+</ul>
+
+
+
+<h3 id="password-manager">10. Set up a password manager.&nbsp;</h3>
+
+
+
+<p>If you frequently forget the email you used to sign up for an account or your password, you’ll LOVE using a password manager.&nbsp;</p>
+
+
+
+<p>Windows 10 and your browser may have some features for saving passwords, but a best practice in the infosec world is to use a dedicated password manager. It’s like upgrading from a tiny safe in your house to a vault in a world-class bank.&nbsp;</p>
+
+
+
+<p>Password managers have you create a master password for your “vault” of sensitive accounts and login information. The best ones sync can automatically add new passwords, sync with your phone and computer, generate and autofill strong passwords, and let you share a specific password with coworkers or friends.&nbsp;</p>
+
+
+
+<p>As hackers are getting better and better at stealing or cracking passwords, technology companies are forcing us to make our passwords stronger and more complicated. That also means more people start re-using passwords. But if one password is stolen in a data breach, that password could then give nefarious actors access to multiple accounts with your personal, financial, or professional information.&nbsp;</p>
+
+
+
+<p>You might have heard of password managers like <a href="https://www.lastpass.com/" target="_blank" rel="noopener">Lastpass</a>, <a href="https://1password.com/" target="_blank" rel="noopener">1Password</a>, <a href="https://keepersecurity.com/" target="_blank" rel="noopener">Keeper</a>, or <a href="https://www.dashlane.com/" target="_blank" rel="noopener">Dashlane</a>. There are more. Pick one that looks good to you and start using it. Several password managers, like Lastpass, offer a free version that will give you all the basic tools you need. We have some of our favorites listed in Carbide’s Marketplace too.&nbsp;</p>
+
+
+
+<p>Your company may also have a required password management software, with an administrator who will create an account for you. Whatever your company policies say about password strength or storage, you’ll want to make sure you’re following that standard.&nbsp;</p>
+
+
+
+<p>Check out our guide on password managers here: <a href="https://carbidesecure.com/resources/how-to-use-a-password-manager/">How to Use a Password Manager</a></p>
+
+
+
+<h2>Harden Windows 10: Close the Doors and Check the Locks</h2>
+
+
+
+<p>You might think a lot of security advice for users boils down to “don’t be dumb.” Use strong passwords. Be careful about the links you click and watch for phishing or scam emails in your inbox. Only download or install software from sources you trust. Don’t leave doors open or your operating system vulnerable to hackers.</p>
+
+
+
+<p>Yet, these myths about security are why companies need security policies as the foundation for an infosec program. You want to make sure you know what your company holds you responsible for doing. Management, even at a startup or SMB, needs to make sure they’re clearly communicating the expectations about security and protecting company data to employees.&nbsp;</p>
+
+
+
+
+
+
+								</div>
+							</div>
+													
+					</div>
+																				<div class="post-author-info">
+												<div class="small-post-author-image">
+							<a href="https://carbidesecure.com/resources/author/shannon">
+																<img width="140" height="140" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%20140%20140&#39;%3E%3C/svg%3E" data-lazy-srcset="https://carbidesecure.com/wp-content/uploads/2022/01/Shannon-McFarland-280x280.jpg 1x, https://carbidesecure.com/wp-content/uploads/2022/01/Shannon-McFarland-280x280.jpg 2x" alt="Shannon McFarland" class="full" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/Shannon-McFarland-280x280.jpg"><noscript><img width="140" height="140" src="https://carbidesecure.com/wp-content/uploads/2022/01/Shannon-McFarland-280x280.jpg" srcset="https://carbidesecure.com/wp-content/uploads/2022/01/Shannon-McFarland-280x280.jpg 1x, https://carbidesecure.com/wp-content/uploads/2022/01/Shannon-McFarland-280x280.jpg 2x" alt="Shannon McFarland" class="full" /></noscript>
+							</a>
+						</div>
+												<h4 class="small-author-name blue bold">
+							<a href="https://carbidesecure.com/resources/author/shannon">Shannon McFarland</a>
+						</h4>
+					</div>
+				</div>
+				<div class="inner wide">
+					<section class="page-block post-footer-block vlt-blue-bg rounded">
+						<div class="post-footer-max">
+							<div class="post-footer-left ilb">
+																<div class="post-author-image">
+									<a href="https://carbidesecure.com/resources/author/shannon">
+																				<img width="140" height="140" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%20140%20140&#39;%3E%3C/svg%3E" data-lazy-srcset="https://carbidesecure.com/wp-content/uploads/2022/01/Shannon-McFarland-280x280.jpg 1x, https://carbidesecure.com/wp-content/uploads/2022/01/Shannon-McFarland-280x280.jpg 2x" alt="Shannon McFarland" class="full" data-lazy-src="https://carbidesecure.com/wp-content/uploads/2022/01/Shannon-McFarland-280x280.jpg"><noscript><img width="140" height="140" src="https://carbidesecure.com/wp-content/uploads/2022/01/Shannon-McFarland-280x280.jpg" srcset="https://carbidesecure.com/wp-content/uploads/2022/01/Shannon-McFarland-280x280.jpg 1x, https://carbidesecure.com/wp-content/uploads/2022/01/Shannon-McFarland-280x280.jpg 2x" alt="Shannon McFarland" class="full" /></noscript>
+									</a>
+								</div>
+																<div class="author-social center">
+																	</div>
+							</div><div class="post-footer-right ilb">
+								<div class="small-label blue">About the Author</div>
+								<div>
+									<a class="author-link" href="https://carbidesecure.com/resources/author/shannon">Shannon McFarland</a>
+								</div>
+																<div class="text author-text">
+									<p>Shannon McFarland writes about information security requirements and frameworks. Previously, she was the Director of Product Marketing at Securicy, and before that a journalist, Techstars hackstar, and a marketing consultant. She’s a passionate outdoorist, gardener, an advocate for mental health, a total bookworm, and dog mom. She works remotely from her home in the Boston area.</p>
+								</div>
+																<div>
+									<a class="text-link margin-top" href="https://carbidesecure.com/resources/author/shannon">All Posts Written by Author</a>
+								</div>
+							</div>
+					</div></section>
+				</div>
+								<div class="post-tags">
+					<div class="inner">
+						<div class="tag-label small-label ilb">Tags:</div><div class="tag-list ilb"><a href="https://carbidesecure.com/resources/tag/cybersecurity/" rel="tag">cybersecurity</a><a href="https://carbidesecure.com/resources/tag/information-security/" rel="tag">information security</a></div>
+					</div>
+				</div>
+							</div>
+		</div>
+	</div>
+	<footer class="bo-grad rel">
+	<div class="over">
+						
+<section class="page-block related-block">
+	<div class="inner wide">
+		<div class="subhead white">Related Content</div>
+	</div>
+	<ul class="half-post-grid clean ilb">
+		<li class="half-grid-post">
+	<a href="https://carbidesecure.com/resources/how-to-check-for-viruses-using-built-in-tools-in-windows-10/">
+				<div data-bg="https://carbidesecure.com/wp-content/themes/carbide_custom/images/blog-placeholder.svg" class="half-grid-post-image cover rel rocket-lazyload" style="">
+			<img width="440" height="268" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%20440%20268&#39;%3E%3C/svg%3E" alt="" class="full" data-lazy-src="https://carbidesecure.com/wp-content/themes/carbide_custom/images/blog-placeholder.svg"><noscript><img width="440" height="268" src="https://carbidesecure.com/wp-content/themes/carbide_custom/images/blog-placeholder.svg" alt="" class="full" /></noscript>
+		</div>
+				<div class="half-grid-post-content blue">
+												<h3 class="small-label">Blog Posts</h3>
+						<h2 class="subhead grid-post-title">How to Check for Viruses Using Built-In Tools in Windows 10</h2>
+		</div>
+	</a>
+</li><li class="half-grid-post">
+	<a href="https://carbidesecure.com/resources/how-to-enable-auto-updates-in-windows-10/">
+				<div data-bg="https://carbidesecure.com/wp-content/themes/carbide_custom/images/blog-placeholder.svg" class="half-grid-post-image cover rel rocket-lazyload" style="">
+			<img width="440" height="268" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%20440%20268&#39;%3E%3C/svg%3E" alt="" class="full" data-lazy-src="https://carbidesecure.com/wp-content/themes/carbide_custom/images/blog-placeholder.svg"><noscript><img width="440" height="268" src="https://carbidesecure.com/wp-content/themes/carbide_custom/images/blog-placeholder.svg" alt="" class="full" /></noscript>
+		</div>
+				<div class="half-grid-post-content blue">
+												<h3 class="small-label">Blog Posts</h3>
+						<h2 class="subhead grid-post-title">How to Enable Auto-Updates in Windows 10</h2>
+		</div>
+	</a>
+</li>	</ul>
+</section>
+
+
+				<div class="inner vwide mobile">
+			<div class="footer-middle">
+				<div class="inner wide">
+					<a class="footer-middle-logo" href="https://carbidesecure.com/">
+						<img width="173" height="44" src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%20173%2044&#39;%3E%3C/svg%3E" alt="Carbide" class="full" data-lazy-src="https://carbidesecure.com/wp-content/themes/carbide_custom/images/carbide-logo-color.svg"><noscript><img width="173" height="44" src="https://carbidesecure.com/wp-content/themes/carbide_custom/images/carbide-logo-color.svg" alt="Carbide" class="full" /></noscript>
+					</a>
+					<div class="footer-col-wrap">
+						<div class="footer-middle-left ilb">
+														<h5 class="small-label blue">Newsletter Signup</h5>
+																					<div class="text">
+								<p>Accelerate your security initiative.</p>
+							</div>
+														<div class="signup-form">
+								
+                <div class="gf_browser_chrome gform_wrapper gravity-theme" id="gform_wrapper_2"><div id="gf_2" class="gform_anchor" tabindex="-1"></div><form method="post" enctype="multipart/form-data" target="gform_ajax_frame_2" id="gform_2" action="https://carbidesecure.com/resources/security-best-practices-hardening-windows-10/#gf_2" novalidate="">
+                        <div class="gform_body gform-body"><div id="gform_fields_2" class="gform_fields left_label form_sublabel_below description_below"><div id="field_2_1" class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible"><label class="gfield_label" for="input_2_1">Email<span class="gfield_required"><span class="gfield_required gfield_required_text">(Required)</span></span></label><div class="ginput_container ginput_container_email">
+                            <input name="input_1" id="input_2_1" type="email" value="" class="large" tabindex="200" placeholder="Email Address*" aria-required="true" aria-invalid="false">
+                        <a class="join">Submit</a></div></div><fieldset id="field_2_2" class="gfield gfield--width-full hide-label gfield_contains_required field_sublabel_below field_description_below hidden_label gfield_visibility_visible"><legend class="gfield_label gfield_label_before_complex">Signup Consent<span class="gfield_required"><span class="gfield_required gfield_required_text">(Required)</span></span></legend><div class="ginput_container ginput_container_consent"><input name="input_2.1" id="input_2_2_1" type="checkbox" value="1" tabindex="201" aria-required="true" aria-invalid="false"> <label class="gfield_consent_label" for="input_2_2_1">Subscribe and stay informed.</label><span class="gfield_required gfield_required_text">(Required)</span><input type="hidden" name="input_2.2" value="Subscribe and stay informed." class="gform_hidden"><input type="hidden" name="input_2.3" value="1" class="gform_hidden"></div></fieldset></div></div>
+        <div class="gform_footer left_label"> <input type="submit" id="gform_submit_button_2" class="gform_button button" value="Submit" tabindex="202" onclick="if(window[&quot;gf_submitting_2&quot;]){return false;}  if( !jQuery(&quot;#gform_2&quot;)[0].checkValidity || jQuery(&quot;#gform_2&quot;)[0].checkValidity()){window[&quot;gf_submitting_2&quot;]=true;}  " onkeypress="if( event.keyCode == 13 ){ if(window[&quot;gf_submitting_2&quot;]){return false;} if( !jQuery(&quot;#gform_2&quot;)[0].checkValidity || jQuery(&quot;#gform_2&quot;)[0].checkValidity()){window[&quot;gf_submitting_2&quot;]=true;}  jQuery(&quot;#gform_2&quot;).trigger(&quot;submit&quot;,[true]); }"> <input type="hidden" name="gform_ajax" value="form_id=2&amp;title=&amp;description=&amp;tabindex=200">
+            <input type="hidden" class="gform_hidden" name="is_submit_2" value="1">
+            <input type="hidden" class="gform_hidden" name="gform_submit" value="2">
+            
+            <input type="hidden" class="gform_hidden" name="gform_unique_id" value="">
+            <input type="hidden" class="gform_hidden" name="state_2" value="WyJ7XCIyLjFcIjpcIjdiY2RmZjY5M2M1OTFmMzMyZjA2YmIxYmU3MjA1ZTgzXCIsXCIyLjJcIjpcIjIzMjIzNWQyNmNlMzQ2NTdhMWVjODE0ZjdlMTE2MDkwXCIsXCIyLjNcIjpcIjdiY2RmZjY5M2M1OTFmMzMyZjA2YmIxYmU3MjA1ZTgzXCJ9IiwiNDlhZDRhZDQ4ODc4ZjBiNzUzM2Q2NmQzODZlMjY1ZTkiXQ==">
+            <input type="hidden" class="gform_hidden" name="gform_target_page_number_2" id="gform_target_page_number_2" value="0">
+            <input type="hidden" class="gform_hidden" name="gform_source_page_number_2" id="gform_source_page_number_2" value="1">
+            <input type="hidden" name="gform_field_values" value="">
+            
+        </div>
+                        </form>
+                        </div>
+                <iframe style="display:none;width:0px;height:0px;" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/saved_resource.html" name="gform_ajax_frame_2" id="gform_ajax_frame_2" title="This iframe contains the logic required to handle Ajax powered Gravity Forms."></iframe>
+                <script type="text/javascript">
+gform.initializeOnLoaded( function() {gformInitSpinner( 2, 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' );jQuery('#gform_ajax_frame_2').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_2');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_2').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_2').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_2').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_2').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_2').offset().top - mt); }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_2').val();gformInitSpinner( 2, 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' );jQuery(document).trigger('gform_page_loaded', [2, current_page]);window['gf_submitting_2'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}setTimeout(function(){jQuery('#gform_wrapper_2').replaceWith(confirmation_content);jQuery(document).scrollTop(jQuery('#gf_2').offset().top - mt);jQuery(document).trigger('gform_confirmation_loaded', [2]);window['gf_submitting_2'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_2').text());}, 50);}else{jQuery('#gform_2').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger('gform_post_render', [2, current_page]);} );} );
+</script>
+							</div>
+						</div><div class="footer-middle-right ilb">
+							<div class="footer-col ilb">
+								<h5 class="small-label blue">Product </h5>
+																<ul class="footer-nav clean">
+																		<li>
+																														<a href="https://carbidesecure.com/product/platform/" target="_self">Platform</a>
+																			</li>
+																		<li>
+																														<a href="https://carbidesecure.com/product/premium-implementation/" target="_self">Premium</a>
+																			</li>
+																		<li>
+																														<a href="https://carbidesecure.com/product/pricing/" target="_self">Pricing</a>
+																			</li>
+																		<li>
+																														<a href="https://carbidesecure.com/product/integrations/" target="_self">Integrations</a>
+																			</li>
+																	</ul>
+															</div><div class="footer-col ilb">
+								<h5 class="small-label blue">Frameworks </h5>
+																<ul class="footer-nav clean">
+																		<li>
+																														<a href="https://carbidesecure.com/frameworks/" target="_self">Frameworks</a>
+																			</li>
+																		<li>
+																														<a href="https://carbidesecure.com/frameworks/pci-dss-compliance/" target="_self">PCI DSS</a>
+																			</li>
+																		<li>
+																														<a href="https://carbidesecure.com/frameworks/soc-2-compliance/" target="_self">SOC ll</a>
+																			</li>
+																		<li>
+																														<a href="https://carbidesecure.com/frameworks/hipaa-compliance/" target="_self">HIPAA</a>
+																			</li>
+																		<li>
+																														<a href="https://carbidesecure.com/frameworks/iso-27001-compliance/" target="_self">ISO 27001</a>
+																			</li>
+																		<li>
+																														<a href="https://carbidesecure.com/frameworks/gdpr-compliance/" target="_self">GDPR</a>
+																			</li>
+																		<li>
+																														<a href="https://carbidesecure.com/frameworks/nist-800-171-compliance/" target="_self">NIST</a>
+																			</li>
+																	</ul>
+															</div><div class="footer-col ilb">
+								<h5 class="small-label blue">Solutions </h5>
+																<ul class="footer-nav clean">
+																		<li>
+																														<a href="https://carbidesecure.com/solutions/build-a-security-program/" target="_self">Build a Program</a>
+																			</li>
+																		<li>
+																														<a href="https://carbidesecure.com/solutions/solutions-security-compliance/" target="_self">Get Compliant</a>
+																			</li>
+																		<li>
+																														<a href="https://carbidesecure.com/solutions/operationalize-security-privacy/" target="_self">Operationalize Security</a>
+																			</li>
+																		<li>
+																														<a href="https://carbidesecure.com/solutions/expand-new-markets/" target="_self">Enter New Markets</a>
+																			</li>
+																		<li>
+																														<a href="https://carbidesecure.com/solutions/business-continuity-plan-builder/" target="_self">Business Continuity</a>
+																			</li>
+																	</ul>
+															</div><div class="footer-col ilb">
+								<h5 class="small-label blue">Resources </h5>
+																<ul class="footer-nav clean">
+																		<li>
+																														<a href="https://carbidesecure.com/resources/" target="_self">All Resources</a>
+																			</li>
+																		<li>
+																														<a href="https://carbidesecure.com/resources/category/case-study/" target="_self">Case Studies</a>
+																			</li>
+																		<li>
+																														<a href="https://carbidesecure.com/resources/category/blog-posts/" target="_self">Blog</a>
+																			</li>
+																		<li>
+																														<a href="https://carbidesecure.com/resources/category/video/" target="_self">Videos</a>
+																			</li>
+																		<li>
+																														<a href="https://carbidesecure.com/resources/category/ebooks/" target="_self">eBooks</a>
+																			</li>
+																		<li>
+																														<a href="https://carbidesecure.com/resources/category/product-news/" target="_self">News</a>
+																			</li>
+																		<li>
+																														<a href="https://carbidesecure.com/glossary/" target="_self">Glossary</a>
+																			</li>
+																	</ul>
+															</div><div class="footer-col ilb">
+								<h5 class="small-label blue">Company </h5>
+																<ul class="footer-nav clean">
+																		<li>
+																														<a href="https://carbidesecure.com/company/" target="_self">About Carbide</a>
+																			</li>
+																		<li>
+																														<a href="https://carbidesecure.com/company/careers/" target="_self">Careers</a>
+																			</li>
+																		<li>
+																														<a href="https://carbidesecure.com/company/contact/" target="_self">Contact</a>
+																			</li>
+																	</ul>
+															</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom white">
+				<div class="inner wide">
+					<div class="footer-bottom-left ilb vmiddle">
+						Carbide<a class="white" href="https://carbidesecure.com/wp-login.php" target="_blank">©</a> 2022. All rights reserved.
+					</div><div class="footer-bottom-middle ilb vmiddle">
+												<ul class="footer-bottom-nav clean ilb vmiddle upper bold">
+							<li>
+																								<span class="footer-nav-sep">•</span><a href="https://carbidesecure.com/privacy-notice/" target="_self">Privacy Notice</a>
+															</li><li>
+																								<span class="footer-nav-sep">•</span><a href="https://carbidesecure.com/terms-of-service/" target="_self">Terms of Service</a>
+															</li>						</ul>
+											</div><div class="footer-bottom-right ilb vmiddle">
+						<div class="footer-social ilb vmiddle">
+							<a class="social" href="https://www.linkedin.com/company/carbidesecure" target="_blank">
+	<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="20" height="20.2" viewBox="0 0 20 20.2">
+  <path d="M6.1,17.2h-3V7.7h3ZM4.7,6.4A1.69,1.69,0,0,1,3,4.7,1.75,1.75,0,0,1,4.7,3,1.75,1.75,0,0,1,6.4,4.7,1.75,1.75,0,0,1,4.7,6.4ZM16.54,17.2H14.3V12.6c0-1.1,0-2.5-1.5-2.5S11,11.3,11,12.6v4.7H8V7.8h2.8V9.1a3,3,0,0,1,2.8-1.5c3,0,3.6,2,3.6,4.5v5.1Z" fill="#ff7656"></path>
+</svg>
+</a><a class="social" href="https://twitter.com/CarbideSecure" target="_blank">
+	<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="20" height="20.2" viewBox="0 0 20 20.2">
+  <path d="M16.36,7.19v.37A9.33,9.33,0,0,1,7,16.89a9.15,9.15,0,0,1-5-1.45h.79a6.47,6.47,0,0,0,4.06-1.33,3.24,3.24,0,0,1-3-2.35,2.47,2.47,0,0,0,.6.08,4.27,4.27,0,0,0,.87-.08A3.3,3.3,0,0,1,2.6,8.55h0a3.49,3.49,0,0,0,1.52.38A3.18,3.18,0,0,1,2.65,6.27a3.32,3.32,0,0,1,.44-1.66A9.13,9.13,0,0,0,9.85,8a3.36,3.36,0,0,1-.08-.71A3.31,3.31,0,0,1,13,4a3.24,3.24,0,0,1,2.39,1,6.53,6.53,0,0,0,2.1-.76,3.6,3.6,0,0,1-1.44,1.8A7,7,0,0,0,18,5.47,8.35,8.35,0,0,1,16.36,7.19Z" fill="#ff7656"></path>
+</svg>
+</a><a class="social" href="https://www.youtube.com/channel/UC2Qp2CWXEuIYvuj1qVQZdEQ" target="_blank">
+	<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <path d="M18.62,6A2.15,2.15,0,0,0,18,5a2.35,2.35,0,0,0-1-.59A54.61,54.61,0,0,0,10,4a54.61,54.61,0,0,0-7,.37A2.35,2.35,0,0,0,2,5a2.15,2.15,0,0,0-.58,1A23.06,23.06,0,0,0,1,10.28a23,23,0,0,0,.38,4.31A2.23,2.23,0,0,0,3,16.18a54.61,54.61,0,0,0,7,.37,54.61,54.61,0,0,0,7-.37,2.23,2.23,0,0,0,1.59-1.59A23,23,0,0,0,19,10.28,23.06,23.06,0,0,0,18.62,6ZM8.2,13V7.59l4.68,2.69Z" fill="#ff7656"></path>
+</svg>
+</a>						</div><a class="top scroll ilb vmiddle" href="https://carbidesecure.com/resources/security-best-practices-hardening-windows-10/#container">Back to Top</a>
+					</div>
+					<div class="mobile-footer">
+						Carbide <a class="white" href="https://carbidesecure.com/wp-login.php" target="_blank">©</a> 2022. All rights reserved.
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+</div> <!--! end of #container -->
+<div class="footer-banner yo-grad blue">
+	<div class="inner wide">
+		<div class="banner-text">
+			<p>We’ve changed our name from Securicy to Carbide. <a href="https://carbidesecure.com/resources/carbide-a-nod-to-the-past-a-path-to-the-future/" target="_blank" rel="nofollow noopener noreferrer">Learn more about why.</a></p>
+		</div>
+	</div>
+	<a class="banner-close">
+		<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13">
+  <polygon points="13 1.11 11.89 0 6.5 5.39 1.11 0 0 1.11 5.39 6.5 0 11.89 1.11 13 6.5 7.61 11.89 13 13 11.89 7.61 6.5 13 1.11" fill="#fff"></polygon>
+</svg>
+	</a>
+</div>
+<div class="cook-banner white-bg rounded shadow">
+	<div class="cook-banner-headline semi">We value your privacy.</div>
+		<div class="text vsmall-text">
+		<p>This website uses cookie to ensure you get the best experience on our website.</p>
+	</div>
+		<ul class="cook-actions clean ilb vmiddle">
+		<li>
+			<a class="button cook-yes">
+				<span>Accept</span>
+			</a>
+		</li><li>
+						<a class="privacy-link" href="https://carbidesecure.com/privacy-notice/" target="_self">Privacy Notice</a>
+		</li>	</ul>
+	<a class="cook-close">
+		<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13">
+  <polygon points="13 1.11 11.89 0 6.5 5.39 1.11 0 0 1.11 5.39 6.5 0 11.89 1.11 13 6.5 7.61 11.89 13 13 11.89 7.61 6.5 13 1.11" fill="#fff"></polygon>
+</svg>
+	</a>
+</div>
+<!-- Start of Async HubSpot Analytics Code -->
+<script type="text/javascript">
+(function(d,s,i,r) {
+if (d.getElementById(i)){return;}
+var n=d.createElement(s),e=d.getElementsByTagName(s)[0];
+n.id=i;n.src='//js.hs-analytics.net/analytics/'+(Math.ceil(new Date()/r)*r)+'/2549062.js';
+e.parentNode.insertBefore(n, e);
+})(document,"script","hs-analytics",300000);
+</script>
+<!-- End of Async HubSpot Analytics Code -->
+<script type="text/javascript" id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type="text/javascript" id="rocket-preload-links-js-extra">
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin\/|\/logout\/|\/wp-login.php|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/carbidesecure.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="text/javascript" id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="text/javascript" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/plugins.js.descarga" id="plugins_js-js"></script>
+<script type="text/javascript" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/script.js.descarga" id="script_js-js"></script>
+<script type="text/javascript" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/regenerator-runtime.min.js.descarga" id="regenerator-runtime-js"></script>
+<script type="text/javascript" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/wp-polyfill.min.js.descarga" id="wp-polyfill-js"></script>
+<script type="text/javascript" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/dom-ready.min.js.descarga" id="wp-dom-ready-js"></script>
+<script type="text/javascript" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/hooks.min.js.descarga" id="wp-hooks-js"></script>
+<script type="text/javascript" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/i18n.min.js.descarga" id="wp-i18n-js"></script>
+<script type="text/javascript" id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script type="text/javascript" id="wp-a11y-js-translations">
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "default", { "locale_data": { "messages": { "": {} } } } );
+</script>
+<script type="text/javascript" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/a11y.min.js.descarga" id="wp-a11y-js"></script>
+<script type="text/javascript" defer="defer" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/jquery.json.min.js.descarga" id="gform_json-js"></script>
+<script type="text/javascript" id="gform_gravityforms-js-extra">
+/* <![CDATA[ */
+var gform_i18n = {"datepicker":{"days":{"monday":"Mon","tuesday":"Tue","wednesday":"Wed","thursday":"Thu","friday":"Fri","saturday":"Sat","sunday":"Sun"},"months":{"january":"January","february":"February","march":"March","april":"April","may":"May","june":"June","july":"July","august":"August","september":"September","october":"October","november":"November","december":"December"},"firstDay":1,"iconText":"Select date"}};
+var gf_global = {"gf_currency_config":{"name":"U.S. Dollar","symbol_left":"$","symbol_right":"","symbol_padding":"","thousand_separator":",","decimal_separator":".","decimals":2,"code":"USD"},"base_url":"https:\/\/carbidesecure.com\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/carbidesecure.com\/wp-content\/plugins\/gravityforms\/images\/spinner.svg","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+var gf_legacy_multi = {"2":""};
+var gf_global = {"gf_currency_config":{"name":"U.S. Dollar","symbol_left":"$","symbol_right":"","symbol_padding":"","thousand_separator":",","decimal_separator":".","decimals":2,"code":"USD"},"base_url":"https:\/\/carbidesecure.com\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/carbidesecure.com\/wp-content\/plugins\/gravityforms\/images\/spinner.svg","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+var gf_legacy_multi = {"2":""};
+/* ]]> */
+</script>
+<script type="text/javascript" id="gform_gravityforms-js-before">
+var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,initializeOnLoaded:function(o){gform.domLoaded&&gform.scriptsLoaded?o():!gform.domLoaded&&gform.scriptsLoaded?window.addEventListener("DOMContentLoaded",o):document.addEventListener("gform_main_scripts_loaded",o)},hooks:{action:{},filter:{}},addAction:function(o,n,r,t){gform.addHook("action",o,n,r,t)},addFilter:function(o,n,r,t){gform.addHook("filter",o,n,r,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,n){gform.removeHook("action",o,n)},removeFilter:function(o,n,r){gform.removeHook("filter",o,n,r)},addHook:function(o,n,r,t,i){null==gform.hooks[o][n]&&(gform.hooks[o][n]=[]);var e=gform.hooks[o][n];null==i&&(i=n+"_"+e.length),gform.hooks[o][n].push({tag:i,callable:r,priority:t=null==t?10:t})},doHook:function(n,o,r){var t;if(r=Array.prototype.slice.call(r,1),null!=gform.hooks[n][o]&&((o=gform.hooks[n][o]).sort(function(o,n){return o.priority-n.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==n?t.apply(null,r):r[0]=t.apply(null,r)})),"filter"==n)return r[0]},removeHook:function(o,n,t,i){var r;null!=gform.hooks[o][n]&&(r=(r=gform.hooks[o][n]).filter(function(o,n,r){return!!(null!=i&&i!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][n]=r)}});
+</script>
+<script type="text/javascript" defer="defer" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/gravityforms.min.js.descarga" id="gform_gravityforms-js"></script>
+<script type="text/javascript" defer="defer" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/placeholders.jquery.min.js.descarga" id="gform_placeholder-js"></script>
+<script type="text/javascript">
+gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 2) {if(typeof Placeholders != 'undefined'){
+                        Placeholders.enable();
+                    }} } );jQuery(document).bind('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } );
+</script>
+<script type="text/javascript">
+gform.initializeOnLoaded( function() { jQuery(document).trigger('gform_post_render', [2, 1]) } );
+</script>
+<script>window.lazyLoadOptions={elements_selector:"img[data-lazy-src],.rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async="" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/lazyload.min.js.descarga"></script><script type="text/javascript">
+_linkedin_partner_id = "2799865";
+window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+</script><script type="text/javascript">
+(function(l) {
+if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+window.lintrk.q=[]}
+var s = document.getElementsByTagName("script")[0];
+var b = document.createElement("script");
+b.type = "text/javascript";b.async = true;
+b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+s.parentNode.insertBefore(b, s);})(window.lintrk);
+</script>
+<noscript>
+<img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=2799865&fmt=gif" />
+</noscript><script>"use strict";function wprRemoveCPCSS(){var preload_stylesheets=document.querySelectorAll('link[data-rocket-async="style"][rel="preload"]');if(preload_stylesheets&&0<preload_stylesheets.length)for(var stylesheet_index=0;stylesheet_index<preload_stylesheets.length;stylesheet_index++){var media=preload_stylesheets[stylesheet_index].getAttribute("media")||"all";if(window.matchMedia(media).matches)return void setTimeout(wprRemoveCPCSS,200)}var elem=document.getElementById("rocket-critical-css");elem&&"remove"in elem&&elem.remove()}window.addEventListener?window.addEventListener("load",wprRemoveCPCSS):window.attachEvent&&window.attachEvent("onload",wprRemoveCPCSS);</script><noscript><link data-minify="1" rel='stylesheet' id='custom_style-css'  href='https://carbidesecure.com/wp-content/cache/min/1/wp-content/themes/carbide_custom/style.css?ver=1647529864' type='text/css' media='' /></noscript>
+
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me --><script type="text/javascript" id="">var fs_callback=function(){if("undefined"!==typeof FS&&"undefined"!==typeof FS._cookies()&&"undefined"!==FS._cookies().fs_uid)for(var b=FS._cookies().fs_uid,k=document.querySelectorAll("a[href^\x3d'https://securicy.app']"),f=0,h=k.length;f<h;f++){var g=k[f];g.href=addToQueryString(g.href,"fs_uid",b)}};"complete"===document.readyState||"loading"!==document.readyState&&!document.documentElement.doScroll?fs_callback():document.addEventListener("DOMContentLoaded",fs_callback);
+function addToQueryString(b,k,f){f=encodeURIComponent(f);var h=b.indexOf("?"),g=b.indexOf("#");h==b.length-1&&(b=b.substring(0,h),h=-1);return(0<g?b.substring(0,g):b)+(0<h?"\x26"+k+"\x3d"+f:"?"+k+"\x3d"+f)+(0<g?b.substring(g):"")}window._fs_debug=!1;window._fs_host="fullstory.com";window._fs_script="edge.fullstory.com/s/fs.js";window._fs_org="MVVVA";window._fs_namespace="FS";
+(function(b,k,f,h,g,l,a,e){f in b?b.console&&b.console.log&&b.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].'):(a=b[f]=function(d,c,m){a.q?a.q.push([d,c,m]):a._api(d,c,m)},a.q=[],l=k.createElement(h),l.async=1,l.crossOrigin="anonymous",l.src="https://"+_fs_script,e=k.getElementsByTagName(h)[0],e.parentNode.insertBefore(l,e),a.identify=function(d,c,m){a(g,{uid:d},m);c&&a(g,c,m)},a.setUserVars=function(d,c){a(g,d,c)},a.event=function(d,c,m){a("event",{n:d,p:c},m)},a.shutdown=
+function(){a("rec",!1)},a.restart=function(){a("rec",!0)},a.log=function(d,c){a("log",[d,c])},a.consent=function(d){a("consent",!arguments.length||d)},a.identifyAccount=function(d,c){l="account";c=c||{};c.acctId=d;a(l,c)},a.clearUserCookie=function(){},a._w={},e="XMLHttpRequest",a._w[e]=b[e],e="fetch",a._w[e]=b[e],b[e]&&(b[e]=function(){return a._w[e].apply(this,arguments)}))})(window,document,window._fs_namespace,"script","user");</script>
+<script type="text/javascript" id="">!function(d,e,f,a,b,c){d.twq||(a=d.twq=function(){a.exe?a.exe.apply(a,arguments):a.queue.push(arguments)},a.version="1.1",a.queue=[],b=e.createElement(f),b.async=!0,b.src="//static.ads-twitter.com/uwt.js",c=e.getElementsByTagName(f)[0],c.parentNode.insertBefore(b,c))}(window,document,"script");twq("init","o1k4f");twq("track","PageView");</script>
+<script type="text/javascript" id="">(function(){var a=document.createElement("script");a.type="text/javascript";a.async=!0;a.referrerPolicy="unsafe-url";a.src="https://ws.zoominfo.com/pixel/618bd3102281f50015977861";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)})();</script>
+<noscript>
+  <img src="https://ws.zoominfo.com/pixel/618bd3102281f50015977861" width="1" height="1" style="display: none;">
+</noscript><script type="text/javascript" id="">window.intercomSettings={api_base:"https://api-iam.intercom.io",app_id:"q7t92v9r"};</script>
+
+<script type="text/javascript" id="">(function(){var b=window,a=b.Intercom;if("function"===typeof a)a("reattach_activator"),a("update",b.intercomSettings);else{var e=document,d=function(){d.c(arguments)};d.q=[];d.c=function(c){d.q.push(c)};b.Intercom=d;a=function(){var c=e.createElement("script");c.type="text/javascript";c.async=!0;c.src="https://widget.intercom.io/widget/q7t92v9r";var f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(c,f)};"complete"===document.readyState?a():b.attachEvent?b.attachEvent("onload",a):b.addEventListener("load",
+a,!1)}})();</script><p id="a11y-speak-intro-text" class="a11y-speak-intro-text" style="position: absolute;margin: -1px;padding: 0;height: 1px;width: 1px;overflow: hidden;clip: rect(1px, 1px, 1px, 1px);-webkit-clip-path: inset(50%);clip-path: inset(50%);border: 0;word-wrap: normal !important;" hidden="hidden">Notifications</p><div id="a11y-speak-assertive" class="a11y-speak-region" style="position: absolute;margin: -1px;padding: 0;height: 1px;width: 1px;overflow: hidden;clip: rect(1px, 1px, 1px, 1px);-webkit-clip-path: inset(50%);clip-path: inset(50%);border: 0;word-wrap: normal !important;" aria-live="assertive" aria-relevant="additions text" aria-atomic="true"></div><div id="a11y-speak-polite" class="a11y-speak-region" style="position: absolute;margin: -1px;padding: 0;height: 1px;width: 1px;overflow: hidden;clip: rect(1px, 1px, 1px, 1px);-webkit-clip-path: inset(50%);clip-path: inset(50%);border: 0;word-wrap: normal !important;" aria-live="polite" aria-relevant="additions text" aria-atomic="true"></div><iframe id="intercom-frame" style="position: absolute !important; opacity: 0 !important; width: 1px !important; height: 1px !important; top: 0 !important; left: 0 !important; border: none !important; display: block !important; z-index: -1 !important; pointer-events: none;" aria-hidden="true" tabindex="-1" title="Intercom" src="./Security Best Practices for Your Windows 10 Computer _ Carbide_files/saved_resource(1).html"></iframe><div class="intercom-lightweight-app"><style id="intercom-lightweight-app-style" type="text/css">
+  @keyframes intercom-lightweight-app-launcher {
+    from {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes intercom-lightweight-app-gradient {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes intercom-lightweight-app-messenger {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .intercom-lightweight-app {
+    position: fixed;
+    z-index: 2147483001;
+    width: 0;
+    height: 0;
+    font-family: intercom-font, "Helvetica Neue", "Apple Color Emoji", Helvetica, Arial, sans-serif;
+  }
+
+  .intercom-lightweight-app-gradient {
+    position: fixed;
+    z-index: 2147483002;
+    width: 500px;
+    height: 500px;
+    bottom: 0;
+    right: 0;
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse at bottom right,
+      rgba(29, 39, 54, 0.16) 0%,
+      rgba(29, 39, 54, 0) 72%);
+    animation: intercom-lightweight-app-gradient 200ms ease-out;
+  }
+
+  .intercom-lightweight-app-launcher {
+    position: fixed;
+    z-index: 2147483003;
+    bottom: 30px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #FF7656;
+    cursor: pointer;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.06), 0 2px 32px 0 rgba(0, 0, 0, 0.16);
+    animation: intercom-lightweight-app-launcher 250ms ease;
+  }
+
+  .intercom-lightweight-app-launcher:focus {
+    outline: none;
+    
+  }
+
+  .intercom-lightweight-app-launcher-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    transition: transform 100ms linear, opacity 80ms linear;
+  }
+
+  .intercom-lightweight-app-launcher-icon-open {
+    
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+      
+  }
+
+  .intercom-lightweight-app-launcher-icon-open svg {
+    width: 28px;
+    height: 32px;
+  }
+
+  .intercom-lightweight-app-launcher-icon-open svg path {
+    fill: rgb(255, 255, 255);
+  }
+
+  .intercom-lightweight-app-launcher-icon-self-serve {
+    
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+      
+  }
+
+  .intercom-lightweight-app-launcher-icon-self-serve svg {
+    height: 56px;
+  }
+
+  .intercom-lightweight-app-launcher-icon-self-serve svg path {
+    fill: rgb(255, 255, 255);
+  }
+
+  .intercom-lightweight-app-launcher-custom-icon-open {
+    max-height: 36px;
+    max-width: 36px;
+    
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+      
+  }
+
+  .intercom-lightweight-app-launcher-icon-minimize {
+    
+        opacity: 0;
+        transform: rotate(-60deg) scale(0);
+      
+  }
+
+  .intercom-lightweight-app-launcher-icon-minimize svg {
+    width: 16px;
+  }
+
+  .intercom-lightweight-app-launcher-icon-minimize svg path {
+    fill: rgb(255, 255, 255);
+  }
+
+  .intercom-lightweight-app-messenger {
+    position: fixed;
+    z-index: 2147483003;
+    overflow: hidden;
+    background-color: white;
+    animation: intercom-lightweight-app-messenger 250ms ease-out;
+    
+        width: 376px;
+        height: calc(100% - 130px);
+        max-height: 704px;
+        min-height: 250px;
+        right: 20px;
+        bottom: 110px;
+        box-shadow: 0 5px 40px rgba(0,0,0,0.16);
+        border-radius: 8px;
+      
+  }
+
+  .intercom-lightweight-app-messenger-header {
+    height: 75px;
+    background: linear-gradient(
+      135deg,
+      rgb(16, 6, 159) 0%,
+      rgb(6, 2, 61) 100%
+    );
+  }
+
+  @media print {
+    .intercom-lightweight-app {
+      display: none;
+    }
+  }
+</style><div class="intercom-lightweight-app-launcher intercom-launcher" role="button" tabindex="0" aria-label="Open Intercom Messenger" aria-live="polite"><div class="intercom-lightweight-app-launcher-icon intercom-lightweight-app-launcher-icon-open"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 32"><path d="M28 32s-4.714-1.855-8.527-3.34H3.437C1.54 28.66 0 27.026 0 25.013V3.644C0 1.633 1.54 0 3.437 0h21.125c1.898 0 3.437 1.632 3.437 3.645v18.404H28V32zm-4.139-11.982a.88.88 0 00-1.292-.105c-.03.026-3.015 2.681-8.57 2.681-5.486 0-8.517-2.636-8.571-2.684a.88.88 0 00-1.29.107 1.01 1.01 0 00-.219.708.992.992 0 00.318.664c.142.128 3.537 3.15 9.762 3.15 6.226 0 9.621-3.022 9.763-3.15a.992.992 0 00.317-.664 1.01 1.01 0 00-.218-.707z"></path></svg></div><div class="intercom-lightweight-app-launcher-icon intercom-lightweight-app-launcher-icon-minimize"><svg viewBox="0 0 16 14" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M.116 4.884l1.768-1.768L8 9.232l6.116-6.116 1.768 1.768L8 12.768.116 4.884z"></path></svg></div></div></div></body></html>

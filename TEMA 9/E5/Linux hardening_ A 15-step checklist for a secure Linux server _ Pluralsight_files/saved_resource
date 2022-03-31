@@ -1,0 +1,1 @@
+(function() {var script = document.createElement("script");script.src = "https://com-pluralsight.netmng.com/?url=" + encodeURIComponent(window.location.href) + "&aid=5520&siclientid=103352&ref=https%3A%2F%2Fwww.google.com%2F";script.type = "text/javascript";try { if (!!window.location.href) { document.getElementsByTagName("head")[0].appendChild(script); }} catch (e) {}})();

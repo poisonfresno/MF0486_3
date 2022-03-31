@@ -1,0 +1,27 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="440" height="268" viewBox="0 0 440 268">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="440" height="268" fill="none"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="434.37" y1="325.45" x2="434.37" y2="-142.35" gradientTransform="matrix(1, 0, 0, -1, 0, 270)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffc36f"/>
+      <stop offset="1" stop-color="#ff7656" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="145.53" y1="65.57" x2="145.53" y2="414.28" gradientTransform="matrix(1, 0, 0, -1, 0, 270)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6f2389"/>
+      <stop offset="1" stop-color="#ff7656" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="40.1" y1="158.99" x2="40.1" y2="-115.28" gradientTransform="matrix(1, 0, 0, -1, 0, 270)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#000f8f"/>
+      <stop offset="1" stop-color="#ff7656" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g clip-path="url(#clip-path)">
+    <g>
+      <rect width="440" height="268" fill="#ff7656"/>
+      <path d="M257.47,320.75,399.8,403.06a69,69,0,0,0,69.14,0l142.33-82.31a69.23,69.23,0,0,0,34.54-60V96.11a69.26,69.26,0,0,0-34.54-60L468.94-46.16a69,69,0,0,0-69.14,0L257.47,36.14a69.41,69.41,0,0,0-34.54,60V260.79a69.37,69.37,0,0,0,34.54,60Z" fill="url(#linear-gradient)"/>
+      <path d="M277.39-76,171.3-137.36a51.49,51.49,0,0,0-25.77-6.92,51.47,51.47,0,0,0-25.77,6.92L13.66-76A51.51,51.51,0,0,0-5.19-57.11a51.72,51.72,0,0,0-6.9,25.81V91.45a51.63,51.63,0,0,0,25.75,44.7l106.1,61.35a51.38,51.38,0,0,0,51.54,0l106.09-61.35a51.72,51.72,0,0,0,25.75-44.7V-31.3a51.77,51.77,0,0,0-6.91-25.8A51.51,51.51,0,0,0,277.39-76Z" fill="url(#linear-gradient-2)"/>
+      <path d="M-63.61,331.57l83.45,48.26a40.4,40.4,0,0,0,40.53,0l83.45-48.26a40.58,40.58,0,0,0,20.25-35.15V199.87a40.58,40.58,0,0,0-20.25-35.16L60.37,116.45a40.47,40.47,0,0,0-40.53,0l-83.45,48.26a40.62,40.62,0,0,0-14.82,14.86,40.71,40.71,0,0,0-5.43,20.3v96.55a40.71,40.71,0,0,0,5.43,20.29,40.54,40.54,0,0,0,14.82,14.86Z" fill="url(#linear-gradient-3)"/>
+    </g>
+  </g>
+</svg>
